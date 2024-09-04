@@ -1,0 +1,33 @@
+.work-card {
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  color: #3B3B3B;
+}
+
+.work-card:hover {
+  transform: scale(1.05);
+}
+  
+.app-name {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.roles {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .work-card {
+    margin: 0 15px; /* Keep some margin on smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .work-card {
+    margin: 0 10px; /* Adjust margin for very small screens */
+  }
+}

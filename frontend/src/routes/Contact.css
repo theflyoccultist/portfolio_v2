@@ -1,0 +1,15 @@
+.contact-container {
+    height: 100vh;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.contact-container h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.contact-container p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}

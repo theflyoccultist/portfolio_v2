@@ -1,0 +1,41 @@
+.about-container {
+    height: 100vh;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.about-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: add rounded corners to the image */
+}
+
+.about-section .btn {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 20px; /* Matches the rounded button style in your prototype */
+}
+
+@media (max-width: 768px) {
+    .about-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-section p {
+        font-size: 1rem;
+    }
+
+    .about-section .btn {
+        width: 100%; /* Make the button full-width on smaller screens */
+    }
+}
