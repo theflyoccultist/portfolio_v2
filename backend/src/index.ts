@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'http://rinkakuworks.com',
     methods: ['GET', 'POST'],
     credentials: true
 }));
