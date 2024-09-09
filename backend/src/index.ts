@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 app.use(cors({
-    origin: 'http://rinkakuworks.com',
+    origin: ['http://rinkakuworks.com'],
     methods: ['GET', 'POST'],
     credentials: true
 }));
@@ -40,7 +40,7 @@ app.post('/api/contact', async (req: Request, res: Response) => {
             from: email,
             to: process.env.EMAIL_USER,
             subject: 'New Contact Form Submission',
-            text: message,
+            text: `sender: ${req.body.email}\n\n${message}`
         };
 
         await transporter.sendMail(mailOptions);

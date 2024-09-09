@@ -21,7 +21,7 @@ const app = (0, express_1.default)();
 const PORT = process.env.PORT || 5000;
 app.use(express_1.default.json());
 app.use((0, cors_1.default)({
-    origin: 'http://rinkakuworks.com',
+    origin: ['http://rinkakuworks.com'],
     methods: ['GET', 'POST'],
     credentials: true
 }));
@@ -45,7 +45,7 @@ app.post('/api/contact', (req, res) => __awaiter(void 0, void 0, void 0, functio
             from: email,
             to: process.env.EMAIL_USER,
             subject: 'New Contact Form Submission',
-            text: message,
+            text: `sender: ${req.body.email}\n\n${message}`
         };
         yield transporter.sendMail(mailOptions);
         res.status(200).json({ message: 'Email sent successfully.' });
