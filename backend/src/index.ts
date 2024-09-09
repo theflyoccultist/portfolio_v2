@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 app.use(cors({
-    origin: ['http://rinkakuworks.com'],
+    origin: ['http://rinkakuworks.com/'],
     methods: ['GET', 'POST'],
     credentials: true
 }));
