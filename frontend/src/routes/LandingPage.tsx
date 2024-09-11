@@ -18,7 +18,7 @@ export default function LandingPage() {
                         J'ai un goût pour l'apprentissage continu, La résolution de problèmes et la compréhension de sujets complexes.</p>
                     </Col>
                     <Col xs={6} md={4} lg={3}>
-                        <img src="src/assets/rinkaku.png" alt="Rin" className="img-fluid mb-4"/><br/>                    
+                        <img src="http://rinkakuworks.com/public/images/rinkaku.png" alt="Rin" className="img-fluid mb-4"/><br/>                    
                     </Col> 
                 </Row>
                 <Row className='justify-content-center mt-4'>

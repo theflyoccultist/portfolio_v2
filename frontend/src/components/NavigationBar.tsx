@@ -8,7 +8,7 @@ export default function Navigationbar() {
       <Container>
         <Navbar.Brand href="/">
           <img
-            src="src/assets/rinkaku.png"
+            src="http://rinkakuworks.com/public/images/rinkaku.png"
             width="30"
             height="30"
             className="d-inline-block align-top"

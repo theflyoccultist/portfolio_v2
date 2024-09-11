@@ -31,6 +31,18 @@
     border-radius: 20px; /* Matches the rounded button style in your prototype */
 }
 
+.aboutme-text {
+    padding: 100px 10px;
+}
+
+.trueprogrammer {
+    padding: 50px 175px 0px 175px;
+}
+
+.skillset {
+    padding-bottom: 50px;
+}
+
 @media (max-width: 768px) {
     .about-section h2 {
         font-size: 1.5rem;

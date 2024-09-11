@@ -14,6 +14,10 @@
     margin-bottom: 2rem;
 }
 
+.fartalert {
+    padding-top: 50px;
+}
+
 @media (max-width: 768px) {
     .contact-container h2 {
         font-size: 1.5rem;

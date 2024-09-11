@@ -46,7 +46,9 @@ export default function ContactPage() {
             <Container id="contact" className="contact-container">
                 <div className="text-center">
                     <h2>Let's Connect!</h2>
-                    <p>Feel free to contact me using the form below. Messages will be sent to my mailbox.</p>
+                </div>
+                <div className='fartalert text-center'>
+                    <h5>Feel free to contact me using the form below. Messages will be sent to my mailbox.</h5>
                 </div>
 
                 <div id="contact-form" className='container mt-5'>
