@@ -25,10 +25,10 @@ app.use((0, cors_1.default)({
     methods: ['GET', 'POST'],
     credentials: true
 }));
-app.get('/', (req, res) => {
+app.get('/backend', (req, res) => {
     res.send('Contact form backend is running');
 });
-app.post('/api/contact', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+app.post('/backend/api/contact', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { email, message } = req.body;
     if (!email || !message) {
         return res.status(400).json({ error: 'Email and message are required.' });

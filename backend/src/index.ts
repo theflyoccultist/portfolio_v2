@@ -16,11 +16,11 @@ app.use(cors({
     credentials: true
 }));
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/backend', (req: Request, res: Response) => {
     res.send('Contact form backend is running');
 });
 
-app.post('/api/contact', async (req: Request, res: Response) => {
+app.post('/backend/api/contact', async (req: Request, res: Response) => {
     const { email, message } = req.body;
   
     if (!email || !message) {
