@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import nodemailer from 'nodemailer';
 import cors from 'cors';
+import path from 'path'
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -15,6 +16,8 @@ app.use(cors({
     methods: ['GET', 'POST'],
     credentials: true
 }));
+
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.get('/backend', (req: Request, res: Response) => {
     res.send('Contact form backend is running');

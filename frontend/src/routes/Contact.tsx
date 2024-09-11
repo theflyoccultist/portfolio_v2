@@ -91,9 +91,6 @@ export default function ContactPage() {
                     </div>
                 )}
                 </div>
-                <div>
-                    <h2>The contact form is currently in maintenance.</h2>
-                </div>
         </Container>
     );
 }

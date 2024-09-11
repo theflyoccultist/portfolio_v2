@@ -12,7 +12,7 @@ export default function AboutPage() {
             </Row>
            <Row xs={2} md={2} lg={2} className='align-items-center'>
                 <Col className='text-center'>
-                    <img src="src/assets/rinkaku.png" alt="My Image" className='img-fluid mb-3' />
+                    <img src="http://fali8410.odns.fr/public/images/rinkaku.png" alt="My Image" className='img-fluid mb-3' />
                 </Col>
                 <Col>
                     <p>My path to becoming a full stack developer...</p>
@@ -26,20 +26,39 @@ export default function AboutPage() {
                 </Col>
             </Row>
             <div className='skillset'>
-                <Row xs={2} md={2} lg={2} className='align-items-center'>
+                <Row xs={1} md={2} lg={3} className='align-items-center'>
                     <Col className='text-center'>
                         <ul><h3>Outils:</h3>
-                            <li>GitHub</li>
+                            <li>GitHub (Version Control, Project Management)</li>
                             <li>Docker</li>
                             <li>cPanel</li>
+                            <li>Mysql, MongoDB</li>
+                            <li>Figma</li>
+                            <li>Trello</li>
                         </ul>
                     </Col>   
                     <Col className='text-center'>
                         <ul><h3>Compétences:</h3>
                             <li>React.js</li>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
                             <li>Javascript</li>
                             <li>Typescript</li>
+                            <li>Node.js</li>
+                            <li>Prototypages et Wireframes</li>
+                            <li>Principes du travail agile</li>
                         </ul>
+                    </Col>
+                    <Col className='text-center'>
+                        <ul><h3>Contact:</h3>
+                            <li>Portfolio</li>
+                            <li>rinkakuworks@mail.com</li> 
+                            <li>Email</li>
+                            <li>y.delahaije@gmail.com</li>
+                            <li>LinkedIn</li>
+                            <li><a href='https://www.linkedin.com/in/rin-delahaije-9750aa138/'>@rin-delahaije</a></li>
+                        </ul>
+
                     </Col>
             </Row>
             </div>

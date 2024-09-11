@@ -6,7 +6,7 @@ export default function PortfolioPage() {
         <div className="container mt-5">
                 <div className="d-flex justify-content-center">
                     <WorkCard 
-                        imageSrc="src/assets/simpleplan.png"
+                        imageSrc="http://fali8410.odns.fr/public/images/simpleplan.png"
                         appName="Simple Plan"
                         roles="UX/UI • User Research • Fullstack Developer"
                         description="An app for concert ticket reservations"

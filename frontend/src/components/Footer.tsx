@@ -8,7 +8,7 @@ export default function Footer() {
                 <Row>
                     <Col className="text-center">
                         <a href="https://github.com/theflyoccultist" className='text-dark me-3'>GitHub</a>
-                        <a href="https://linkedin.com" className='text-dark'>LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/rin-delahaije-9750aa138/" className='text-dark'>LinkedIn</a>
                     </Col>
                 </Row>
                 <Row>

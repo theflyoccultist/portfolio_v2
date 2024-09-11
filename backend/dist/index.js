@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const nodemailer_1 = __importDefault(require("nodemailer"));
 const cors_1 = __importDefault(require("cors"));
+const path_1 = __importDefault(require("path"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
@@ -25,6 +26,7 @@ app.use((0, cors_1.default)({
     methods: ['GET', 'POST'],
     credentials: true
 }));
+app.use('/public', express_1.default.static(path_1.default.join(__dirname, 'public')));
 app.get('/backend', (req, res) => {
     res.send('Contact form backend is running');
 });
