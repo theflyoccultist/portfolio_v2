@@ -10,7 +10,7 @@ export default function AboutPage() {
                     <p> I am a true programmer.</p>
                 </Col>
             </Row>
-           <Row xs={2} md={4} lg={6} className='align-items-center'>
+           <Row xs={2} md={2} lg={2} className='align-items-center'>
                 <Col className='text-center'>
                     <img src="src/assets/rinkaku.png" alt="My Image" className='img-fluid mb-3' />
                 </Col>
@@ -25,6 +25,25 @@ export default function AboutPage() {
                     <Button variant='secondary' size='lg'>View Resume</Button>
                 </Col>
             </Row>
+            <div className='skillset'>
+                <Row xs={2} md={2} lg={2} className='align-items-center'>
+                    <Col className='text-center'>
+                        <ul><h3>Outils:</h3>
+                            <li>GitHub</li>
+                            <li>Docker</li>
+                            <li>cPanel</li>
+                        </ul>
+                    </Col>   
+                    <Col className='text-center'>
+                        <ul><h3>Compétences:</h3>
+                            <li>React.js</li>
+                            <li>Javascript</li>
+                            <li>Typescript</li>
+                        </ul>
+                    </Col>
+            </Row>
+            </div>
+
         </Container>
     );
 }

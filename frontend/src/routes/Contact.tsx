@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormControl, FormGroup, FormLabel, Button, Spinner } from 'react-bootstrap';
+import { FormControl, FormGroup, FormLabel, Button, Spinner, Container} from 'react-bootstrap';
 import './Contact.css';
 
 export default function ContactPage() {
@@ -43,53 +43,57 @@ export default function ContactPage() {
     };
 
     return(
-            <div id="contact" className="contact-container">
+            <Container id="contact" className="contact-container">
                 <div className="text-center">
-                    <h1>Let's Connect!</h1>
+                    <h2>Let's Connect!</h2>
                     <p>Feel free to contact me using the form below. Messages will be sent to my mailbox.</p>
                 </div>
-                    <div id="contact-form" className='container mt-5'>
-                    <form onSubmit={handleSubmit}>
-                        <FormGroup className="mb-3" controlId="exampleForm.ControlInput1">
-                            <FormLabel>Email address</FormLabel>
-                            <FormControl
-                                type='email'
-                                placeholder='name@example.com'
-                                name='email'
-                                value={formData.email}
-                                onChange={handleInputChange}
-                                required
-                            />
-                        </FormGroup>
-                        <FormGroup className="mb-3" controlId="exampleForm.ControlTextarea1">
-                            <FormLabel>Your message here</FormLabel>
-                            <FormControl 
-                                as="textarea" 
-                                rows={10} 
-                                name='message'
-                                value={formData.message}
-                                onChange={handleInputChange}
-                                required    
-                            />
-                        </FormGroup>
-                        <div className="d-flex justify-content-center mt-4">
-                            <Button variant="secondary" size="lg" type="submit" disabled={isSubmitting}>
-                                {isSubmitting ? (
-                                    <>
-                                        <Spinner animation="border" size="sm" /> Sending...
-                                    </>
-                                ) : (
-                                    'Send e-mail'
-                                )}
-                            </Button>
-                        </div>
-                    </form>
-                    {statusMessage && (
-                        <div className="text-center mt-4">
-                            <p>{statusMessage}</p>
-                        </div>
-                    )}
-            </div>
-        </div>
+
+                <div id="contact-form" className='container mt-5'>
+                <form onSubmit={handleSubmit}>
+                    <FormGroup className="mb-3" controlId="exampleForm.ControlInput1">
+                        <FormLabel>Email address</FormLabel>
+                        <FormControl
+                            type='email'
+                            placeholder='name@example.com'
+                            name='email'
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            required
+                        />
+                    </FormGroup>
+                    <FormGroup className="mb-3" controlId="exampleForm.ControlTextarea1">
+                        <FormLabel>Your message here</FormLabel>
+                        <FormControl 
+                            as="textarea" 
+                            rows={10} 
+                            name='message'
+                            value={formData.message}
+                            onChange={handleInputChange}
+                            required    
+                        />
+                    </FormGroup>
+                    <div className="d-flex justify-content-center mt-4">
+                        <Button variant="secondary" size="lg" type="submit" disabled={isSubmitting}>
+                            {isSubmitting ? (
+                                <>
+                                    <Spinner animation="border" size="sm" /> Sending...
+                                </>
+                            ) : (
+                                'Send e-mail'
+                            )}
+                        </Button>
+                    </div>
+                </form>
+                {statusMessage && (
+                    <div className="text-center mt-4">
+                        <p>{statusMessage}</p>
+                    </div>
+                )}
+                </div>
+                <div>
+                    <h2>The contact form is currently in maintenance.</h2>
+                </div>
+        </Container>
     );
 }

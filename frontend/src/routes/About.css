@@ -1,7 +1,12 @@
 .about-container {
-    height: 100vh;
+    min-height: 100vh;
     background-color: #f8f9fa;
-    padding: 20px;
+    padding: 75px 20px;
+}
+
+.about-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
 .about-section h2 {
@@ -10,8 +15,8 @@
 }
 
 .about-section p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
 }
 
 .about-section img {
@@ -38,4 +43,8 @@
     .about-section .btn {
         width: 100%; /* Make the button full-width on smaller screens */
     }
+}
+
+ul {
+    list-style: none;
 }
