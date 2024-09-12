@@ -1,7 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { motion } from "framer-motion";
 import PortfolioPage from "./PortfolioPage";
 import './LandingPage.css';
+import AnimatedButton from "../components/AnimatedButton";
 
 export default function LandingPage() {
     return(
@@ -23,15 +23,7 @@ export default function LandingPage() {
                 </Row>
                 <Row className='justify-content-center mt-4'>
                     <Col md={4} className='text-center'>
-                        <motion.a
-                            href="#work"
-                            initial={{ opacity: 0 }} // Initial state before animation
-                            animate={{ opacity: [0, 1, 0] }} // Looping animation
-                            transition={{ duration: 4, repeat: Infinity }}
-                            className="down-arrow"
-                        >
-                            <span>&#x2B07;</span> {/* Unicode for downwards arrow */}
-                        </motion.a>
+                        <AnimatedButton href="#work" buttonText="View My Works" />
                     </Col>
                 </Row>
             </Container>

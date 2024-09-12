@@ -22,3 +22,13 @@
 html {
     scroll-behavior: smooth;
 }
+
+@media (max-width: 768px) {
+    .landing-container {
+        padding: 20px 10vw 0px 10vw;
+    }
+
+    .landing-container img {
+        width: 100%;
+    }
+}

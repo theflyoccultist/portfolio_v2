@@ -1,5 +1,6 @@
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import "./About.css";
+import AnimatedButton from '../components/AnimatedButton';
 
 export default function AboutPage() {
     return(
@@ -17,7 +18,7 @@ export default function AboutPage() {
                         id congue massa dignissim in. </h5>
                 </Col>
             </Row>
-           <Row xs={2} md={2} lg={2} className='align-items-center'>
+           <Row xs={1} md={2} lg={2} className='align-items-center'>
                 <Col className='text-center'>
                     <img src="http://fali8410.odns.fr/public/images/rinkaku.png" alt="My Image" className='img-fluid mb-3' />
                 </Col>
@@ -42,7 +43,7 @@ export default function AboutPage() {
             </Row>
             <Row className='justify-content-center mt-4'>
                 <Col md={4} className='text-center'>
-                    <Button variant='secondary' size='lg'>View Resume</Button>
+                    <AnimatedButton href="#" buttonText="View Resume" />
                 </Col>
             </Row>
           
