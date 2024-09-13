@@ -25,8 +25,10 @@ app.use((0, cors_1.default)({
     methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true
 }));
+// Handle preflight requests for all routes
+app.options('*', (0, cors_1.default)());
 app.use(express_1.default.json());
-app.use(express_1.default.static(path_1.default.join(__dirname, '../public_html')));
+app.use(express_1.default.static('/home/fali8410/public_html'));
 app.use('/public', express_1.default.static(path_1.default.join(__dirname, 'public')));
 app.get('/backend', (req, res) => {
     res.send('Contact form backend is running');
@@ -60,7 +62,7 @@ app.post('/backend/api/contact', (req, res) => __awaiter(void 0, void 0, void 0,
 }));
 // Catch-all route
 app.get('*', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, '../public_html/index.html'));
+    res.sendFile('/home/fali8410/public_html/index.html');
 });
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

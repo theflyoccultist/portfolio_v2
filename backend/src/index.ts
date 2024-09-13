@@ -14,9 +14,12 @@ app.use(cors({
     methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true
 }));
+// Handle preflight requests for all routes
+app.options('*', cors());
+
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../public_html')));
+app.use(express.static('/home/fali8410/public_html'));
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
@@ -58,7 +61,7 @@ app.post('/backend/api/contact', async (req: Request, res: Response) => {
 
 // Catch-all route
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public_html/index.html'));
+    res.sendFile('/home/fali8410/public_html/index.html');
   });
 
 app.listen(PORT, () => {
