@@ -20,15 +20,12 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 5000;
+app.use(express_1.default.json());
 app.use((0, cors_1.default)({
-    origin: ['http://rinkakuworks.com/', 'http://fali8410.odns.fr'],
-    methods: ['GET', 'POST', 'OPTIONS'],
+    origin: ['http://rinkakuworks.com/'],
+    methods: ['GET', 'POST'],
     credentials: true
 }));
-// Handle preflight requests for all routes
-app.options('*', (0, cors_1.default)());
-app.use(express_1.default.json());
-app.use(express_1.default.static('/home/fali8410/public_html'));
 app.use('/public', express_1.default.static(path_1.default.join(__dirname, 'public')));
 app.get('/backend', (req, res) => {
     res.send('Contact form backend is running');
@@ -60,10 +57,6 @@ app.post('/backend/api/contact', (req, res) => __awaiter(void 0, void 0, void 0,
         res.status(500).json({ error: 'Failed to send email.' });
     }
 }));
-// Catch-all route
-app.get('*', (req, res) => {
-    res.sendFile('/home/fali8410/public_html/index.html');
-});
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
