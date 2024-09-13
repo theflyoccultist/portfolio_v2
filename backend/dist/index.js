@@ -22,11 +22,18 @@ const app = (0, express_1.default)();
 const PORT = process.env.PORT || 5000;
 app.use(express_1.default.json());
 app.use((0, cors_1.default)({
-    origin: ['http://rinkakuworks.com/'],
-    methods: ['GET', 'POST'],
+    origin: ['http://rinkakuworks.com/', 'http://fali8410.odns.fr'],
+    methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true
 }));
 app.use('/public', express_1.default.static(path_1.default.join(__dirname, 'public')));
+// Serve static files from the React app
+app.use(express_1.default.static(path_1.default.join(__dirname, 'client/build')));
+// Other API routes would go here
+// Catch-all route
+app.get('*', (req, res) => {
+    res.sendFile(path_1.default.join(__dirname + '/client/build/index.html'));
+});
 app.get('/backend', (req, res) => {
     res.send('Contact form backend is running');
 });
