@@ -19,11 +19,6 @@ app.use(cors({
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-// Catch-all route
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-
 app.get('/backend', (req: Request, res: Response) => {
     res.send('Contact form backend is running');
 });
@@ -59,6 +54,11 @@ app.post('/backend/api/contact', async (req: Request, res: Response) => {
         res.status(500).json({ error: 'Failed to send email.'})
     }
 });
+
+// Catch-all route
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './index.html'));
+  });
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

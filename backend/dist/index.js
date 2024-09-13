@@ -27,10 +27,6 @@ app.use((0, cors_1.default)({
     credentials: true
 }));
 app.use('/public', express_1.default.static(path_1.default.join(__dirname, 'public')));
-// Catch-all route
-app.get('*', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, 'index.html'));
-});
 app.get('/backend', (req, res) => {
     res.send('Contact form backend is running');
 });
@@ -61,6 +57,10 @@ app.post('/backend/api/contact', (req, res) => __awaiter(void 0, void 0, void 0,
         res.status(500).json({ error: 'Failed to send email.' });
     }
 }));
+// Catch-all route
+app.get('*', (req, res) => {
+    res.sendFile(path_1.default.join(__dirname, './index.html'));
+});
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
