@@ -31,7 +31,7 @@ app.use('/public', express_1.default.static(path_1.default.join(__dirname, 'publ
 app.use(express_1.default.static(path_1.default.join(__dirname, '../public_html')));
 // Catch-all route
 app.get('*', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname + '../public_html/index.html'));
+    res.sendFile(path_1.default.join(__dirname, '../public_html/index.html'));
 });
 app.get('/backend', (req, res) => {
     res.send('Contact form backend is running');
