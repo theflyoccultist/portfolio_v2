@@ -24,6 +24,7 @@ app.get('/backend', (req: Request, res: Response) => {
 });
 
 app.post('/backend/api/contact', async (req: Request, res: Response) => {
+    res.json({ message: 'API works!' });
     const { email, message } = req.body;
   
     if (!email || !message) {
@@ -54,6 +55,10 @@ app.post('/backend/api/contact', async (req: Request, res: Response) => {
         res.status(500).json({ error: 'Failed to send email.'})
     }
 });
+
+app.get('*', (req, res) => {
+    res.redirect('/');
+  });  
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
