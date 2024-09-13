@@ -13,9 +13,11 @@ app.use(express.json());
 
 app.use(cors({
     origin: ['http://rinkakuworks.com/'],
-    methods: ['GET', 'POST'],
+    methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true
 }));
+
+app.options('*', cors());
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
