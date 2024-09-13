@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { FormControl, FormGroup, FormLabel, Button, Spinner, Container} from 'react-bootstrap';
 import './Contact.css';
+import { useTranslation } from 'react-i18next';
 
 export default function ContactPage() {
+    const { t } = useTranslation();
+
     const [formData, setFormData] = useState({
         email: '',
         message: ''
@@ -45,19 +48,19 @@ export default function ContactPage() {
     return(
             <Container id="contact" className="contact-container">
                 <div className="text-center">
-                    <h2>Let's Connect!</h2>
+                    <h2>{t('contact')}</h2>
                 </div>
                 <div className='fartalert text-center'>
-                    <h5>Feel free to contact me using the form below. Messages will be sent to my mailbox.</h5>
+                    <h5>{t('contactText')}</h5>
                 </div>
 
                 <div id="contact-form" className='container mt-5'>
                 <form onSubmit={handleSubmit}>
                     <FormGroup className="mb-3" controlId="exampleForm.ControlInput1">
-                        <FormLabel>Email address</FormLabel>
+                        <FormLabel>{t('emailForm')}</FormLabel>
                         <FormControl
                             type='email'
-                            placeholder='name@example.com'
+                            placeholder={t('emailFormPlaceholder')}
                             name='email'
                             value={formData.email}
                             onChange={handleInputChange}
@@ -65,7 +68,7 @@ export default function ContactPage() {
                         />
                     </FormGroup>
                     <FormGroup className="mb-3" controlId="exampleForm.ControlTextarea1">
-                        <FormLabel>Your message here</FormLabel>
+                        <FormLabel>{t('fieldLabel')}</FormLabel>
                         <FormControl 
                             as="textarea" 
                             rows={10} 
@@ -79,10 +82,10 @@ export default function ContactPage() {
                         <Button variant="secondary" size="lg" type="submit" disabled={isSubmitting}>
                             {isSubmitting ? (
                                 <>
-                                    <Spinner animation="border" size="sm" /> Sending...
+                                    <Spinner animation="border" size="sm" /> {t('buttonLoading')}
                                 </>
                             ) : (
-                                'Send e-mail'
+                                t('buttonSendEmail')
                             )}
                         </Button>
                     </div>

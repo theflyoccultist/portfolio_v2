@@ -11,6 +11,8 @@ import AboutPage from "./routes/About"
 import ContactPage from "./routes/Contact"
 import ErrorPage from "./routes/errorpage"
 
+import "./i18n";
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
