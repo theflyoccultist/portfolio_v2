@@ -9,13 +9,14 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(express.json());
-
 app.use(cors({
     origin: ['http://rinkakuworks.com/', 'http://fali8410.odns.fr'],
     methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true
 }));
+
+app.use(express.json());
+app.use(express.static(path.join(__dirname, '../public_html')));
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
@@ -57,7 +58,7 @@ app.post('/backend/api/contact', async (req: Request, res: Response) => {
 
 // Catch-all route
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './index.html'));
+    res.sendFile(path.join(__dirname, '../public_html/index.html'));
   });
 
 app.listen(PORT, () => {
