@@ -28,11 +28,10 @@ app.use((0, cors_1.default)({
 }));
 app.use('/public', express_1.default.static(path_1.default.join(__dirname, 'public')));
 // Serve static files from the React app
-app.use(express_1.default.static(path_1.default.join(__dirname, 'client/build')));
-// Other API routes would go here
+app.use(express_1.default.static(path_1.default.join(__dirname, '../public_html')));
 // Catch-all route
 app.get('*', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname + '/client/build/index.html'));
+    res.sendFile(path_1.default.join(__dirname + '../public_html/index.html'));
 });
 app.get('/backend', (req, res) => {
     res.send('Contact form backend is running');

@@ -20,13 +20,11 @@ app.use(cors({
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
-
-// Other API routes would go here
+app.use(express.static(path.join(__dirname, '../public_html')));
 
 // Catch-all route
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'));
+  res.sendFile(path.join(__dirname + '../public_html/index.html'));
 });
 
 app.get('/backend', (req: Request, res: Response) => {
