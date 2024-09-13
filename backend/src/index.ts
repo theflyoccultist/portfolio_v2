@@ -19,6 +19,8 @@ app.use(cors({
 
 app.options('*', cors());
 
+app.use(express.static('/home/fali8410/public_html'));
+
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.get('/backend', (req: Request, res: Response) => {
@@ -59,8 +61,8 @@ app.post('/backend/api/contact', async (req: Request, res: Response) => {
 });
 
 app.get('*', (req, res) => {
-    res.redirect('/');
-  });  
+    res.sendFile(path.resolve('/home/fali8410/public_html/index.html'));
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

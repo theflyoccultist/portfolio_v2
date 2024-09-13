@@ -23,9 +23,11 @@ const PORT = process.env.PORT || 5000;
 app.use(express_1.default.json());
 app.use((0, cors_1.default)({
     origin: ['http://rinkakuworks.com/'],
-    methods: ['GET', 'POST'],
+    methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true
 }));
+app.options('*', (0, cors_1.default)());
+app.use(express_1.default.static('/home/fali8410/public_html'));
 app.use('/public', express_1.default.static(path_1.default.join(__dirname, 'public')));
 app.get('/backend', (req, res) => {
     res.send('Contact form backend is running');
@@ -59,7 +61,7 @@ app.post('/backend/api/contact', (req, res) => __awaiter(void 0, void 0, void 0,
     }
 }));
 app.get('*', (req, res) => {
-    res.redirect('/');
+    res.sendFile(path_1.default.resolve('/home/fali8410/public_html/index.html'));
 });
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
