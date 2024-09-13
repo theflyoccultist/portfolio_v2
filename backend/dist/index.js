@@ -31,6 +31,7 @@ app.get('/backend', (req, res) => {
     res.send('Contact form backend is running');
 });
 app.post('/backend/api/contact', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.json({ message: 'API works!' });
     const { email, message } = req.body;
     if (!email || !message) {
         return res.status(400).json({ error: 'Email and message are required.' });
@@ -57,6 +58,9 @@ app.post('/backend/api/contact', (req, res) => __awaiter(void 0, void 0, void 0,
         res.status(500).json({ error: 'Failed to send email.' });
     }
 }));
+app.get('*', (req, res) => {
+    res.redirect('/');
+});
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
