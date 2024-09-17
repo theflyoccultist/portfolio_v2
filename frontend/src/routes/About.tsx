@@ -35,7 +35,7 @@ export default function AboutPage() {
             </Row>
             <Row className='justify-content-center mt-4'>
                 <Col md={4} className='text-center'>
-                    <AnimatedButton href="#" buttonText={t('buttonViewResume')} />
+                    <AnimatedButton href="https://drive.google.com/file/d/1MjdeHNIPh0GVHPrqlCKHnrsY3B904Grv/view?usp=sharing" buttonText={t('buttonViewResume')} />
                 </Col>
             </Row>
           
