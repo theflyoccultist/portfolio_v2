@@ -11,6 +11,8 @@ import AboutPage from "./routes/About"
 import ContactPage from "./routes/Contact"
 import ErrorPage from "./routes/errorpage"
 
+import Evo11 from './routes/Evo11';
+
 import "./i18n";
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -21,6 +23,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route index element={<LandingPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contact" element={<ContactPage />} />
+          
+          <Route path='evo11' element={<Evo11 />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>

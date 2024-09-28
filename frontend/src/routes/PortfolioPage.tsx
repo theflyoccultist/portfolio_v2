@@ -4,14 +4,29 @@ import "../components/WorkCard.css";
 export default function PortfolioPage() {
     return(
         <div className="container mt-5">
-                <div className="d-flex justify-content-center">
+                <div className="justify-content-center">
                     <WorkCard 
-                        imageSrc="http://fali8410.odns.fr/public/images/simpleplan.png"
+                        imageSrc="http://rinkakuworks.com/public/images/simpleplan.png"
                         appName="Simple Plan"
-                        roles="UX/UI • User Research • Fullstack Developer"
+                        roles="UX/UI • User Research • Dev FullStack"
                         description="An app for concert ticket reservations"
+                        link="#"
                     />
-            </div>
+                    <WorkCard
+                        imageSrc="http://rinkakuworks.com/public/images/evo11.png"
+                        appName="Evo 11"
+                        roles="UX/UI • User Research • Dev FullStack"
+                        description="A wellness app for gender transition"
+                        link="/evo11"
+                    />
+                    <WorkCard 
+                        imageSrc="http://rinkakuworks.com/public/images/vanity-vixen.png"
+                        appName="Vanity Vixen"
+                        roles="UX/UI • User Research • Dev FullStack"
+                        description="An app where users can find tuorials and interact"
+                        link="#"
+                    />
+                </div>
         </div>
     )
 }

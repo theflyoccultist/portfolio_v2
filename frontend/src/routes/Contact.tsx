@@ -46,56 +46,56 @@ export default function ContactPage() {
     };
 
     return(
-            <Container id="contact" className="contact-container">
-                <div className="text-center">
-                    <h2>{t('contact')}</h2>
-                </div>
-                <div className='fartalert text-center'>
-                    <h5>{t('contactText')}</h5>
-                </div>
+        <Container id="contact" className="contact-container">
+            <div className="text-center">
+                <h2>{t('contact')}</h2>
+            </div>
+            <div className='fartalert text-center'>
+                <h5>{t('contactText')}</h5>
+            </div>
 
-                <div id="contact-form" className='container mt-5'>
-                <form onSubmit={handleSubmit}>
-                    <FormGroup className="mb-3" controlId="exampleForm.ControlInput1">
-                        <FormLabel>{t('emailForm')}</FormLabel>
-                        <FormControl
-                            type='email'
-                            placeholder={t('emailFormPlaceholder')}
-                            name='email'
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            required
-                        />
-                    </FormGroup>
-                    <FormGroup className="mb-3" controlId="exampleForm.ControlTextarea1">
-                        <FormLabel>{t('fieldLabel')}</FormLabel>
-                        <FormControl 
-                            as="textarea" 
-                            rows={10} 
-                            name='message'
-                            value={formData.message}
-                            onChange={handleInputChange}
-                            required    
-                        />
-                    </FormGroup>
-                    <div className="d-flex justify-content-center mt-4">
-                        <Button variant="secondary" size="lg" type="submit" disabled={isSubmitting}>
-                            {isSubmitting ? (
-                                <>
-                                    <Spinner animation="border" size="sm" /> {t('buttonLoading')}
-                                </>
-                            ) : (
-                                t('buttonSendEmail')
-                            )}
-                        </Button>
-                    </div>
-                </form>
-                {statusMessage && (
-                    <div className="text-center mt-4">
-                        <p>{statusMessage}</p>
-                    </div>
-                )}
+            <div id="contact-form" className='container mt-5'>
+            <form onSubmit={handleSubmit}>
+                <FormGroup className="mb-3" controlId="exampleForm.ControlInput1">
+                    <FormLabel>{t('emailForm')}</FormLabel>
+                    <FormControl
+                        type='email'
+                        placeholder={t('emailFormPlaceholder')}
+                        name='email'
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                    />
+                </FormGroup>
+                <FormGroup className="mb-3" controlId="exampleForm.ControlTextarea1">
+                    <FormLabel>{t('fieldLabel')}</FormLabel>
+                    <FormControl 
+                        as="textarea" 
+                        rows={10} 
+                        name='message'
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        required    
+                    />
+                </FormGroup>
+                <div className="d-flex justify-content-center mt-4">
+                    <Button variant="secondary" size="lg" type="submit" disabled={isSubmitting}>
+                        {isSubmitting ? (
+                            <>
+                                <Spinner animation="border" size="sm" /> {t('buttonLoading')}
+                            </>
+                        ) : (
+                            t('buttonSendEmail')
+                        )}
+                    </Button>
                 </div>
+            </form>
+            {statusMessage && (
+                <div className="text-center mt-4">
+                    <p>{statusMessage}</p>
+                </div>
+            )}
+            </div>
         </Container>
     );
 }
