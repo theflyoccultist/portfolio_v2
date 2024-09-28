@@ -6,21 +6,21 @@ export default function PortfolioPage() {
         <div className="container mt-5">
                 <div className="justify-content-center">
                     <WorkCard 
-                        imageSrc="http://rinkakuworks.com/public/images/simpleplan.png"
+                        imageSrc="https://rinkakuworks.com/public/images/simpleplan.png"
                         appName="Simple Plan"
                         roles="UX/UI • User Research • Dev FullStack"
                         description="An app for concert ticket reservations"
                         link="#"
                     />
                     <WorkCard
-                        imageSrc="http://rinkakuworks.com/public/images/evo11.png"
+                        imageSrc="https://rinkakuworks.com/public/images/evo11.png"
                         appName="Evo 11"
                         roles="UX/UI • User Research • Dev FullStack"
                         description="A wellness app for gender transition"
                         link="/evo11"
                     />
                     <WorkCard 
-                        imageSrc="http://rinkakuworks.com/public/images/vanity-vixen.png"
+                        imageSrc="https://rinkakuworks.com/public/images/vanity-vixen.png"
                         appName="Vanity Vixen"
                         roles="UX/UI • User Research • Dev FullStack"
                         description="An app where users can find tuorials and interact"

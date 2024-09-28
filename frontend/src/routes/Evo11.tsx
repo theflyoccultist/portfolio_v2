@@ -15,7 +15,7 @@ export default function Evo11() {
             <div className="justify-content-center">
                 <Row className="text-center">
                     <Col>
-                        <img src="http://rinkakuworks.com/public/images/evo11.png" alt="evo11 transition app" />
+                        <img src="https://rinkakuworks.com/public/images/evo11.png" alt="evo11 transition app" />
                     </Col>
                     <Col>
                         <AnimatedButton href="#" buttonText="View Live Demo" />

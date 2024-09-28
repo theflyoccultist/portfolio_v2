@@ -16,7 +16,7 @@ export default function AboutPage() {
             </Row>
            <Row xs={1} md={2} lg={2} className='align-items-center'>
                 <Col className='text-center'>
-                    <img src="http://rinkakuworks.com/public/images/rinkaku.png" alt="My Image" className='img-fluid mb-3' />
+                    <img src="https://rinkakuworks.com/public/images/rinkaku.png" alt="My Image" className='img-fluid mb-3' />
                 </Col>
                 <Col className='aboutme-text'>
                     <p><strong>{t('aboutme')}</strong>
@@ -35,7 +35,7 @@ export default function AboutPage() {
             </Row>
             <Row className='justify-content-center mt-4'>
                 <Col md={4} className='text-center'>
-                    <AnimatedButton href="http://rinkakuworks.com/public/CV_RIN_DELAHAIJE.pdf" buttonText={t('buttonViewResume')} />
+                    <AnimatedButton href="https://rinkakuworks.com/public/CV_RIN_DELAHAIJE.pdf" buttonText={t('buttonViewResume')} />
                 </Col>
             </Row>
           
