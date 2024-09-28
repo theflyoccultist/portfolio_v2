@@ -1,18 +1,16 @@
 import express, { Request, Response } from 'express';
-import nodemailer from 'nodemailer';
 import sgMail from'@sendgrid/mail'
 import cors from 'cors';
 import path from 'path'
-
 import dotenv from 'dotenv';
 dotenv.config({ path: './backend/.env' });
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
 
 const app = express();
+app.use(express.json());
 const PORT = process.env.PORT || 5000;
 
-app.use(express.json());
 
 app.use(cors({
     origin: ['https://rinkakuworks.com/'],
@@ -30,42 +28,26 @@ app.get('/backend', (req: Request, res: Response) => {
     res.send('Contact form backend is running');
 });
 
-app.post('/backend/api/contact', async (req: Request, res: Response) => {
-    res.json({ message: 'API works!' });
-    const { email, message } = req.body;
-  
-    if (!email || !message) {
-        return res.status(400).json({ error: 'Email and message are required.'})
-    }
+app.post('/send-email', async (req: Request, res: Response) => {
+    const { to, from, subject, text } = req.body;
 
-    try {
-        const transporter = nodemailer.createTransport({
-            service: 'SendGrid',
-            auth: {
-                user: 'apikey',
-                pass: process.env.SENDGRID_API_KEY,
-            },
+    const msg = {
+        to,
+        from,
+        subject,
+        text,
+    };
+
+    sgMail
+        .send(msg)
+        .then(() => {
+            res.status(200).send('Email sent successfully');
+        })
+        .catch((error) => {
+            console.error('Error sending email', error);
+            res.status(500).send('An error occured while sending the email');
         });
-
-        const mailOptions = {
-            from: email,
-            to: process.env.EMAIL_USER,
-            subject: 'New Contact Form Submission',
-            text: `sender: ${req.body.email}\n\n${message}`
-        };
-
-        await transporter.sendMail(mailOptions);
-
-        res.status(200).json({ message: 'Email sent successfully.'});
-    } catch (error) {
-        console.error('Error sending email:', error);
-        res.status(500).json({ error: 'Failed to send email.'})
-    }
-});
-
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve('/home/fali8410/public_html/index.html'));
-});
+    });
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

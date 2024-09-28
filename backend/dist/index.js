@@ -13,7 +13,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const nodemailer_1 = __importDefault(require("nodemailer"));
 const mail_1 = __importDefault(require("@sendgrid/mail"));
 const cors_1 = __importDefault(require("cors"));
 const path_1 = __importDefault(require("path"));
@@ -21,8 +20,8 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config({ path: './backend/.env' });
 mail_1.default.setApiKey(process.env.SENDGRID_API_KEY);
 const app = (0, express_1.default)();
-const PORT = process.env.PORT || 5000;
 app.use(express_1.default.json());
+const PORT = process.env.PORT || 5000;
 app.use((0, cors_1.default)({
     origin: ['https://rinkakuworks.com/'],
     methods: ['GET', 'POST', 'OPTIONS'],
@@ -34,37 +33,24 @@ app.use('/public', express_1.default.static(path_1.default.join(__dirname, 'publ
 app.get('/backend', (req, res) => {
     res.send('Contact form backend is running');
 });
-app.post('/backend/api/contact', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.json({ message: 'API works!' });
-    const { email, message } = req.body;
-    if (!email || !message) {
-        return res.status(400).json({ error: 'Email and message are required.' });
-    }
-    try {
-        const transporter = nodemailer_1.default.createTransport({
-            service: 'SendGrid',
-            auth: {
-                user: 'apikey',
-                pass: process.env.SENDGRID_API_KEY,
-            },
-        });
-        const mailOptions = {
-            from: email,
-            to: process.env.EMAIL_USER,
-            subject: 'New Contact Form Submission',
-            text: `sender: ${req.body.email}\n\n${message}`
-        };
-        yield transporter.sendMail(mailOptions);
-        res.status(200).json({ message: 'Email sent successfully.' });
-    }
-    catch (error) {
-        console.error('Error sending email:', error);
-        res.status(500).json({ error: 'Failed to send email.' });
-    }
+app.post('/send-email', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { to, from, subject, text } = req.body;
+    const msg = {
+        to,
+        from,
+        subject,
+        text,
+    };
+    mail_1.default
+        .send(msg)
+        .then(() => {
+        res.status(200).send('Email sent successfully');
+    })
+        .catch((error) => {
+        console.error('Error sending email', error);
+        res.status(500).send('An error occured while sending the email');
+    });
 }));
-app.get('*', (req, res) => {
-    res.sendFile(path_1.default.resolve('/home/fali8410/public_html/index.html'));
-});
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

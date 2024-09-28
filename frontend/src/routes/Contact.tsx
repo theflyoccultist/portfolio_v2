@@ -23,7 +23,7 @@ export default function ContactPage() {
         setIsSubmitting(true);
 
         try {
-            const response = await fetch('https://rinkakuworks.com/backend/api/contact', {
+            const response = await fetch('https://rinkakuworks.com/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
