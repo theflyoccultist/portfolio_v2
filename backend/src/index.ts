@@ -1,10 +1,13 @@
 import express, { Request, Response } from 'express';
 import nodemailer from 'nodemailer';
+import sgMail from'@sendgrid/mail'
 import cors from 'cors';
 import path from 'path'
 
 import dotenv from 'dotenv';
 dotenv.config();
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -12,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 app.use(cors({
-    origin: ['http://rinkakuworks.com/'],
+    origin: ['http://rinkakuworks.com/ | http://localhost:5173/'],
     methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true
 }));
@@ -37,10 +40,10 @@ app.post('/backend/api/contact', async (req: Request, res: Response) => {
 
     try {
         const transporter = nodemailer.createTransport({
-            service: 'gmail',
+            service: 'SendGrid',
             auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
+                user: 'apikey',
+                pass: process.env.SENDGRID_API_KEY,
             },
         });
 

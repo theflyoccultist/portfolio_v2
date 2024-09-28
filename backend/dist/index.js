@@ -14,15 +14,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const nodemailer_1 = __importDefault(require("nodemailer"));
+const mail_1 = __importDefault(require("@sendgrid/mail"));
 const cors_1 = __importDefault(require("cors"));
 const path_1 = __importDefault(require("path"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
+mail_1.default.setApiKey(process.env.SENDGRID_API_KEY);
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 5000;
 app.use(express_1.default.json());
 app.use((0, cors_1.default)({
-    origin: ['http://rinkakuworks.com/'],
+    origin: ['http://rinkakuworks.com/ | http://localhost:5173/'],
     methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true
 }));
@@ -40,10 +42,10 @@ app.post('/backend/api/contact', (req, res) => __awaiter(void 0, void 0, void 0,
     }
     try {
         const transporter = nodemailer_1.default.createTransport({
-            service: 'gmail',
+            service: 'SendGrid',
             auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
+                user: 'apikey',
+                pass: process.env.SENDGRID_API_KEY,
             },
         });
         const mailOptions = {
