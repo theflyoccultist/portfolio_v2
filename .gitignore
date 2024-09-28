@@ -12,6 +12,7 @@ lerna-debug.log*
 dist-ssr
 *.local
 .env
+sendgrid.env
 
 # Editor directories and files
 .vscode/*

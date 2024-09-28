@@ -18,7 +18,7 @@ const mail_1 = __importDefault(require("@sendgrid/mail"));
 const cors_1 = __importDefault(require("cors"));
 const path_1 = __importDefault(require("path"));
 const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
+dotenv_1.default.config({ path: './backend/.env' });
 mail_1.default.setApiKey(process.env.SENDGRID_API_KEY);
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 5000;

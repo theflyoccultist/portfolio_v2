@@ -5,7 +5,7 @@ import cors from 'cors';
 import path from 'path'
 
 import dotenv from 'dotenv';
-dotenv.config();
+dotenv.config({ path: './backend/.env' });
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
 
