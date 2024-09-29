@@ -22,9 +22,5 @@
     "pw": "Prototypes and Wireframes",
     "agile": "Principles of agile development",
 
-    "contact": "Let's Connect!",
-    "contactText": "Feel free to contact me using the form below. Messages will be sent to my mailbox.",
-    "emailForm": "E-mail address",
-    "emailFormPlaceholder": "name@example.com",
-    "fieldLabel": "Your message here"
+    "contact": "Let's Connect!"
 }
