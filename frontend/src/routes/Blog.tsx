@@ -31,7 +31,9 @@ export default function Blog() {
             setLoading(true);
             setError(null);
             try {
-                const response = await axios.get(`${apiUrl}/api/blog`);
+                const response = await axios.get(`${apiUrl}/api/blog`, {
+                    headers: {}
+                });
                 setBlogPosts(response.data);
             } catch (error) {
                 setError('Failed to load blog posts.')
