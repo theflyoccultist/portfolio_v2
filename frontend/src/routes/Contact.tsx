@@ -1,4 +1,4 @@
-import { Container} from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import './Contact.css';
 import { useTranslation } from 'react-i18next';
 

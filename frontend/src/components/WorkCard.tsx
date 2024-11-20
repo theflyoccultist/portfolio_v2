@@ -14,7 +14,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ imageSrc, appName, roles, descripti
     return (
         <Link to={link}>
             <Card className="work-card my-4 mx-auto text-left">
-                <Card.Img variant='top' src={imageSrc} alt={`${appName} screenshot`} className="img-fluid rounded-start" />
+                <Card.Img variant='top' src={imageSrc} alt={`${appName} screenshot`} className="img-fluid rounded-start" loading='lazy'/>
                     <Card.Body className="d-flex flex-column justify-content-center">
                         <Card.Title className="app-name">{appName}</Card.Title>
                         <div className="card-content">
