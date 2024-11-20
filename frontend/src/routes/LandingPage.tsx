@@ -1,5 +1,6 @@
+import { lazy, Suspense } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import PortfolioPage from "./PortfolioPage";
+const PortfolioPage = lazy(() => import ("./PortfolioPage")); 
 import './LandingPage.css';
 import AnimatedButton from "../components/AnimatedButton";
 import { useTranslation } from "react-i18next";
@@ -31,7 +32,9 @@ export default function LandingPage() {
             </Container>
 
             <div id="work" className="container mt-5">
-                <PortfolioPage />            
+                <Suspense fallback={<div>Loading Projects...</div>}>
+                    <PortfolioPage />                   
+                </Suspense>   
             </div>
         </div>
     );

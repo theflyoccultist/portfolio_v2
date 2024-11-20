@@ -27,6 +27,7 @@ export default function Navigationbar() {
               <Nav.Link as={NavLink} to="/">{t('navBarHome')}</Nav.Link>
               <Nav.Link as={NavLink} to="/about">{t('navBarAbout')}</Nav.Link>
               <Nav.Link as={NavLink} to="/contact">{t('navBarContact')}</Nav.Link>
+              <Nav.Link as={NavLink} to="/blog">Blog</Nav.Link>
               <LanguageSwitcher />
           </Nav>
         </Navbar.Collapse>
