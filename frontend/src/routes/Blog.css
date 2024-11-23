@@ -18,3 +18,23 @@
   margin-bottom: 50px;
   text-align: left;
 }
+
+pre code {
+  background-color: #adadad28;
+  color: #4fe11f;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 768px) {
+  .blog-container {
+    padding: 30px 2vw 0px 2vw;
+  }
+  .card-text {
+    margin: 8vw 10px;
+  }
+  
+  .blog-container img {
+    width: 100%;
+  }
+}
