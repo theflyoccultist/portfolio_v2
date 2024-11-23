@@ -19,11 +19,12 @@
   text-align: left;
 }
 
-pre code {
-  background-color: #adadad28;
-  color: #4fe11f;
-  font-family: 'Courier New', Courier, monospace;
-  white-space: pre-wrap;
+pre {
+  background-color:#1f1f1f;
+  color:#4fe11f;
+  font-family:Courier New,Courier,monospace;
+  white-space:pre-wrap;
+  padding: 2vw;
 }
 
 @media (max-width: 768px) {

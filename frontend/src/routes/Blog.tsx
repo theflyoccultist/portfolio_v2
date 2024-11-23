@@ -54,7 +54,7 @@ export default function Blog() {
                     <div>Loading blog posts...</div>
                 ) : (
                     blogPosts.length > 0 ? (
-                    blogPosts.map((blog) => (
+                    blogPosts.slice().reverse().map((blog) => (
 
                             <Card key={blog.id}>
                                 <Card.Body>
