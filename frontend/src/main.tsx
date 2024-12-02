@@ -5,6 +5,7 @@ import './scss/styles.scss';
 import React, { lazy, Suspense } from "react";
 import * as ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from './utilities/ScrollToTop';
 import App from "./App"
 import LandingPage from "./routes/LandingPage";
 import AboutPage from './routes/About';
@@ -19,6 +20,7 @@ import "./i18n";
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />}>
             <Route index element={<LandingPage />} />

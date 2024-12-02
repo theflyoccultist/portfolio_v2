@@ -15,8 +15,8 @@ export default function PortfolioPage() {
                     <WorkCard
                         imageSrc="https://rinkakuworks.com/public/images/evo11.png"
                         appName="Evo 11"
-                        roles="UX/UI • User Research • Dev FullStack"
-                        description="A wellness app for gender transition"
+                        roles="UX Designer • Recherche Utilisateurs"
+                        description="Application Mobile + Responsive Website pour affirmation transgenre"
                         link="/evo11"
                     />
                     <WorkCard 

@@ -9,7 +9,7 @@ export default function ContactPage() {
         <Container id="contact" className="contact-container">
             <div className="text-center">
                 <h2>{t('contact')}</h2>
-                <h4>{t('contact2')}</h4>
+                <h5>{t('contact2')}</h5>
             </div>
             <div className='fartalert text-center'>
                 <h5>Portfolio : rinkakuworks.com<br/>
