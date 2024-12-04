@@ -13,6 +13,8 @@ import ContactPage from './routes/Contact';
 import ErrorPage from "./routes/errorpage"
 
 const Evo11 = lazy(() => import('./routes/Evo11'));
+const SimplePlan = lazy(() => import('./routes/SimplePlan'));
+const VanityVixen = lazy(() => import('./routes/VanityVixen'));
 const Blog = lazy(() => import('./routes/Blog'));
 
 import "./i18n";
@@ -32,6 +34,16 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                 <Evo11 />
               </Suspense> 
               } />
+            <Route path='simpleplan' element={
+              <Suspense fallback={<div>Loading simplePlan...</div>}>
+                <SimplePlan />
+              </Suspense>
+            } />
+            <Route path='vanityvixen' element={
+              <Suspense fallback={<div>Loading VanityVixen...</div>}>
+                <VanityVixen />
+              </Suspense>
+            } />
             <Route path='blog' element={
               <Suspense fallback={<div>Loading Blog...</div>}>
                 <Blog />
