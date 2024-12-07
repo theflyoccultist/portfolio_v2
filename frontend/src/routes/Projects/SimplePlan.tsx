@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
-import AnimatedButton from "../components/AnimatedButton";
-import { Divider } from "../components/Divider";
+import AnimatedButton from "../../components/AnimatedButton";
+import { Divider } from "../../components/Divider";
 import './SimplePlan.css';
 
 export default function SimplePlan() {

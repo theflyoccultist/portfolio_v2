@@ -12,10 +12,11 @@ import AboutPage from './routes/About';
 import ContactPage from './routes/Contact'; 
 import ErrorPage from "./routes/errorpage"
 
-const Evo11 = lazy(() => import('./routes/Evo11'));
-const SimplePlan = lazy(() => import('./routes/SimplePlan'));
-const VanityVixen = lazy(() => import('./routes/VanityVixen'));
-const Blog = lazy(() => import('./routes/Blog'));
+const Evo11 = lazy(() => import('./routes/Projects/Evo11'));
+const SimplePlan = lazy(() => import('./routes/Projects/SimplePlan'));
+const VanityVixen = lazy(() => import('./routes/Projects/VanityVixen'));
+const BlogList = lazy(() => import('./routes/Blog/BlogList'))
+const ArticlePage = lazy(() => import('./routes/Blog/ArticlePage'))
 
 import "./i18n";
 
@@ -45,8 +46,13 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
               </Suspense>
             } />
             <Route path='blog' element={
-              <Suspense fallback={<div>Loading Blog...</div>}>
-                <Blog />
+              <Suspense fallback={<div>Loading Articles...</div>}>
+                <BlogList />
+              </Suspense> 
+              } />
+            <Route path='blog/:id' element={
+              <Suspense fallback={<div>Loading Article...</div>}>
+                <ArticlePage />
               </Suspense> 
               } />
         </Route>
