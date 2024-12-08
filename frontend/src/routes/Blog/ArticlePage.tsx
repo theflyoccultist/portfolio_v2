@@ -5,6 +5,10 @@ import { Container } from "react-bootstrap";
 import DOMPurify from "dompurify";
 import "./Blog.css";
 
+import Prism from "prismjs";
+import "prismjs/themes/prism-okaidia.css";
+import "prismjs/components/prism-typescript";
+
 const apiUrl = import.meta.env.VITE_API_URL
 
 interface BlogPost {
@@ -49,6 +53,26 @@ export default function ArticlePage() {
         };
         if (id) fetchPostData();
     }, [id]);
+
+    useEffect(() => {
+        const adjustCodeBlocks = () => {
+            const preElements = document.querySelectorAll("pre.ql-syntax");
+            preElements.forEach((pre) => {
+                if (!pre.querySelector("code")) {
+                    const language = pre.getAttribute("data-language") || "typescript";
+                    const codeElement = document.createElement("code");
+                    codeElement.className = `language-${language}`;
+                    codeElement.innerHTML = pre.innerHTML;
+                    pre.innerHTML = "";
+                    pre.appendChild(codeElement);
+                } else {
+                    console.log('this does not work')
+                }
+            });
+            Prism.highlightAll();
+        };
+        if (id) adjustCodeBlocks();
+    }, [blogPost?.content])
     
     if (loading) {
         return (
