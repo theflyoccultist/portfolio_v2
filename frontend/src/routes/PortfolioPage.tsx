@@ -5,6 +5,13 @@ export default function PortfolioPage() {
     return(
         <div className="container mt-5">
                 <div className="justify-content-center">
+                    <WorkCard
+                        imageSrc="https://www.rinkakuworks.com/public/images/portfolio-blogging/blogging-platform.webp"
+                        appName="Plateforme de Blogging"
+                        roles="Web Dev Fullstack"
+                        description="Une plateforme de blogging intégré au portfolio, permettant de publier des articles de manière instantanéee"
+                        link="/portfolio-blogging"
+                    />  
                     <WorkCard 
                         imageSrc="https://rinkakuworks.com/public/images/simpleplan/simpleplan.webp"
                         appName="Simple Plan"

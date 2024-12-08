@@ -12,6 +12,7 @@ import AboutPage from './routes/About';
 import ContactPage from './routes/Contact'; 
 import ErrorPage from "./routes/errorpage"
 
+const PortfolioBlogging = lazy(() => import('./routes/Projects/PortfolioBlogging'))
 const Evo11 = lazy(() => import('./routes/Projects/Evo11'));
 const SimplePlan = lazy(() => import('./routes/Projects/SimplePlan'));
 const VanityVixen = lazy(() => import('./routes/Projects/VanityVixen'));
@@ -30,6 +31,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <Route path="about" element={<AboutPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="*" element={<ErrorPage />} />
+            <Route path='portfolio-blogging' element={
+              <Suspense fallback={<div>Loading Platform showcase...</div>}>
+                <PortfolioBlogging />
+              </Suspense>
+            } />
             <Route path='evo11' element={
               <Suspense fallback={<div>Loading Evo11...</div>}>
                 <Evo11 />

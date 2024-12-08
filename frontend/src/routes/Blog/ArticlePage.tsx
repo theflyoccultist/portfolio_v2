@@ -53,7 +53,7 @@ export default function ArticlePage() {
     if (loading) {
         return (
             <Container id="blog" className="blog-container">
-                <div className="text-center">Loading blog post...</div>
+                <div className="hero-title">Loading blog post...</div>
             </Container>
         );
     }
@@ -61,7 +61,7 @@ export default function ArticlePage() {
     if (error) {
         return (
             <Container id="blog" className="blog-container">
-                <div className="text-center text-danger">{error}</div>
+                <div className="hero-title">{error}</div>
             </Container>
         );
     }
@@ -69,7 +69,7 @@ export default function ArticlePage() {
     if (!blogPost) {
         return (
             <Container id="blog" className="blog-container">
-                <div className="text-center">No blog post available.</div>
+                <h1 className="hero-title">No blog post available.</h1>
             </Container>
         );
     }

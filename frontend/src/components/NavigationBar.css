@@ -2,3 +2,9 @@
     text-decoration: underline;
     color: #007bff;
   }
+
+  @media (max-width: 768px) {
+    .nav-link {
+      padding: 10px;
+    }
+  }

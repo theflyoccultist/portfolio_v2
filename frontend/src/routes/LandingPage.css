@@ -28,7 +28,15 @@ html {
         padding: 20px 10vw 0px 10vw;
     }
 
+    .landing-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .landing-container p {
+        font-size: 1rem;
+    }
+
     .landing-container img {
-        width: 100%;
+        display: none;
     }
 }
