@@ -1,4 +1,4 @@
-import{c as W,g as Q}from"./index-BzEthcLC.js";var X={exports:{}};(function(y){var _=typeof window<"u"?window:typeof WorkerGlobalScope<"u"&&self instanceof WorkerGlobalScope?self:{};/**
+import{c as W,g as Q}from"./index-CWiqQFtH.js";var X={exports:{}};(function(y){var _=typeof window<"u"?window:typeof WorkerGlobalScope<"u"&&self instanceof WorkerGlobalScope?self:{};/**
  * Prism: Lightweight, robust, elegant syntax highlighting
  *
  * @license MIT <https://opensource.org/licenses/MIT>

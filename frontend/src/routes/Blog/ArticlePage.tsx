@@ -8,6 +8,10 @@ import "./Blog.css";
 import Prism from "prismjs";
 import "prismjs/themes/prism-okaidia.css";
 import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-bash";
+import "prismjs/components/prism-rust";
+import "prismjs/components/prism-python";
 
 const apiUrl = import.meta.env.VITE_API_URL
 
@@ -56,22 +60,26 @@ export default function ArticlePage() {
 
     useEffect(() => {
         const adjustCodeBlocks = () => {
-            const preElements = document.querySelectorAll("pre.ql-syntax");
+            const preElements = document.querySelectorAll<HTMLPreElement>("pre.ql-syntax");
             preElements.forEach((pre) => {
+                const textContent = pre.textContent || '';
+                const lines = textContent.split('\n');
+                const firstLine = lines[0]?.trim().toLowerCase() || 'typescript';
+                const language = ['typescript', 'javascript', 'bash', 'rust', 'python'].includes(firstLine)
+                    ? firstLine
+                    : "typescript";
+
                 if (!pre.querySelector("code")) {
-                    const language = pre.getAttribute("data-language") || "typescript";
                     const codeElement = document.createElement("code");
                     codeElement.className = `language-${language}`;
-                    codeElement.innerHTML = pre.innerHTML;
+                    codeElement.innerHTML = DOMPurify.sanitize(pre.innerHTML);
                     pre.innerHTML = "";
                     pre.appendChild(codeElement);
-                } else {
-                    console.log('this does not work')
                 }
             });
             Prism.highlightAll();
         };
-        if (id) adjustCodeBlocks();
+        if (blogPost?.content) adjustCodeBlocks();
     }, [blogPost?.content])
     
     if (loading) {
