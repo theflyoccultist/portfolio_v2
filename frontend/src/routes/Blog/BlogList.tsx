@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import Container from 'react-bootstrap/Container';
 import BlogCard from "./BlogCard";
+import Pagination from "../../components/Pagination";
 import "./Blog.css";
 import axios from 'axios';
-
 
 interface BlogPost {
     id: number;
@@ -20,6 +20,9 @@ export default function BlogList() {
     const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const [currentPage, setCurrentPage] = useState<number>(1);
+    const [totalPages, setTotalPages] = useState<number>(0);
+    const itemsPerPage = 10;
 
     useEffect(() => {
         const fetchBlogPosts = async () => {
@@ -29,7 +32,9 @@ export default function BlogList() {
                 const response = await axios.get(`${apiUrl}/api/blog`, {
                     headers: {}
                 });
-                setBlogPosts(response.data);
+                const posts = response.data.reverse();
+                setBlogPosts(posts);
+                setTotalPages(Math.ceil(response.data.length / itemsPerPage));
             } catch (error) {
                 setError('Failed to load blog posts.')
                 console.error('Error fetching blog posts', error);
@@ -40,6 +45,19 @@ export default function BlogList() {
         fetchBlogPosts();
     }, []);
 
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+    }
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const currentItems = blogPosts.slice(startIndex, startIndex + itemsPerPage);
+
+    const truncate = (text: string, length: number): string => {
+        if (text.length <= length) return text;
+        return text.substring(0, length).trimEnd() + '...';
+    };
+    
+
     return (
         <Container id="blog" className="blog-container">
             <div>
@@ -48,14 +66,14 @@ export default function BlogList() {
                 {loading ? (
                     <div>Loading blog posts...</div>
                 ) : (
-                    blogPosts.length > 0 ? (
-                    blogPosts.slice().reverse().map((blog) => (
+                    currentItems.length > 0 ? (
+                    currentItems.map((blog) => (
                         <BlogCard 
                             key={blog.id}
                             id={blog.id}
                             title={blog.title}
                             thumbnail={blog.thumbnail}
-                            excerpt={blog.content.substring(0, 60) + '...'}
+                            excerpt={truncate(blog.content, 60)}
                         />
 
                     ))
@@ -65,7 +83,14 @@ export default function BlogList() {
                 </div>
               )
             )}
-           </div> 
+           </div>
+            <div style={{ bottom:'0px'}}>
+                <Pagination 
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={handlePageChange}
+                />
+            </div>
         </Container>
     );
 }
