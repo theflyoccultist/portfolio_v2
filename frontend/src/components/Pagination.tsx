@@ -21,6 +21,7 @@ const Pagination: React.FC<PagniationProps> = ({
     return (
         <div>
             <Button
+            variant='outline-info'
             onClick={() => handleClick(currentPage - 1)}
             disabled={currentPage === 1}
             >
@@ -28,6 +29,7 @@ const Pagination: React.FC<PagniationProps> = ({
             </Button>
             {Array.from({ length: totalPages }, (_, index) => (
                 <Button
+                    variant='outline-info'
                     key={index + 1}
                     onClick={() => handleClick(index + 1)}
                     disabled={currentPage === index + 1}
@@ -36,6 +38,7 @@ const Pagination: React.FC<PagniationProps> = ({
                 </Button>
             ))}
             <Button
+                variant='outline-info'
                 onClick={() => handleClick(currentPage + 1)}
                 disabled={currentPage === totalPages}
             >

@@ -84,7 +84,7 @@ export default function BlogList() {
               )
             )}
            </div>
-            <div style={{ bottom:'0px'}}>
+            <div className="pagination">
                 <Pagination 
                     currentPage={currentPage}
                     totalPages={totalPages}

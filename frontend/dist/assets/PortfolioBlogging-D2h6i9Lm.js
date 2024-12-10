@@ -1,4 +1,4 @@
-import{r as o,j as e,C as a,R as t,a as s,A as c}from"./index-CoE9ZfNq.js";import{D as r}from"./Divider-DkF0ySZV.js";import{P as d}from"./prism-typescript-DueY6lTK.js";const i=({language:l,code:n})=>(o.useEffect(()=>{d.highlightAll()},[n]),e.jsx("pre",{children:e.jsx("code",{className:`language-${l}`,children:n})})),u=()=>e.jsx(i,{language:"typescript",code:`
+import{r as o,j as e,C as a,R as t,a as s,A as c}from"./index-DJp-eaic.js";import{D as r}from"./Divider-DCA5HvIo.js";import{P as d}from"./prism-typescript-2g6Ukmtj.js";const i=({language:l,code:n})=>(o.useEffect(()=>{d.highlightAll()},[n]),e.jsx("pre",{children:e.jsx("code",{className:`language-${l}`,children:n})})),u=()=>e.jsx(i,{language:"typescript",code:`
 	import ReactQuill from "react-quill";
 
 	// Toolbar options avec un bouton personnalisé
