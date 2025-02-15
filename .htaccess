@@ -3,9 +3,12 @@
   RewriteEngine On
   RewriteBase /
 
-  # Redirect all HTTP requests to HTTPS
-  RewriteCond %{HTTPS} !=on
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Redirect all HTTP requests to HTTPS with www
+  RewriteCond %{HTTP_HOST} !^www\.
+  RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [L,R=301]
+  
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
   # Handle SPA routes by redirecting to index.html
   RewriteCond %{REQUEST_FILENAME} !-f
