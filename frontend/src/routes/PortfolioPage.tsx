@@ -1,36 +1,39 @@
 import WorkCard from "../components/WorkCard";
 import "../components/WorkCard.css";
+import { useTranslation } from 'react-i18next';
 
 export default function PortfolioPage() {
+    const { t } = useTranslation('common');
+
     return(
         <div className="container mt-5">
                 <div className="justify-content-center">
                     <WorkCard
                         imageSrc="https://www.rinkakuworks.com/public/images/portfolio-blogging/blogging-platform.webp"
-                        appName="Plateforme de Blogging"
-                        roles="Web Dev Fullstack"
-                        description="Une plateforme de blogging intégré au portfolio, permettant de publier des articles de manière instantanéee"
+                        appName={t('appname1')}
+                        roles={t('role1')}
+                        description={t('description1')}
                         link="/portfolio-blogging"
                     />  
                     <WorkCard 
                         imageSrc="https://rinkakuworks.com/public/images/simpleplan/simpleplan.webp"
-                        appName="Simple Plan"
-                        roles="UX Designer • Recherche Utilisateurs"
-                        description="Application Mobile de réservation de concerts, pour une salle de concert locale"
+                        appName={t('appname2')}
+                        roles={t('role2')}
+                        description={t('description2')}
                         link="/simpleplan"
                     />
                     <WorkCard
                         imageSrc="https://www.rinkakuworks.com/public/images/evo11/evo11.webp"
-                        appName="Evo 11"
-                        roles="UX Designer • Recherche Utilisateurs"
-                        description="Application Mobile + Responsive Website pour affirmation transgenre"
+                        appName={t('appname3')}
+                        roles={t('role3')}
+                        description={t('description3')}
                         link="/evo11"
                     />
                     <WorkCard 
                         imageSrc="https://rinkakuworks.com/public/images/vanityvixen/vanity-vixen.webp"
-                        appName="Vanity Vixen"
-                        roles="UX Designer • Recherche Utilisateurs"
-                        description="Responsive Website pour des tutoriels de maquillage"
+                        appName={t('appname4')}
+                        roles={t('role4')}
+                        description={t('description4')}
                         link="/vanityvixen"
                     />
                 </div>

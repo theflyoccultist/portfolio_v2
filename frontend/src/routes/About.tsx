@@ -4,7 +4,7 @@ import AnimatedButton from '../components/AnimatedButton';
 import { useTranslation } from 'react-i18next';
 
 export default function AboutPage() {
-    const { t } = useTranslation();
+    const { t } = useTranslation('common');
 
     return(
         <div>

@@ -3,7 +3,7 @@ import './Contact.css';
 import { useTranslation } from 'react-i18next';
 
 export default function ContactPage() {
-    const { t } = useTranslation();
+    const { t } = useTranslation('common');
 
     return(
         <Container id="contact" className="contact-container">

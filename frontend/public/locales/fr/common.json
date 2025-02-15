@@ -23,5 +23,19 @@
     "agile": "Principes du développement agile",
 
     "contact": "Connectons-nous!",
-    "contact2": "Vous souhaitez travailler avec moi, ou simplement discuter ? Envoyez-moi un message et explorons les possibilités."
+    "contact2": "Vous souhaitez travailler avec moi, ou simplement discuter ? Envoyez-moi un message et explorons les possibilités.",
+
+    
+    "appname1": "Plateforme de Blogging",
+    "role1": "Développeuse Fullstack",
+    "description1": "Une plateforme de blogging intégré à mon portfolio, qui me permet de partager mes projets et mes expériences.",
+    "appname2": "Simple Plan",
+    "role2": "UX Designer",
+    "description2": "Application Mobile de réservation de concerts, pour une salle de concert locale.",
+    "appname3": "Evo11",
+    "role3": "UX Designer",
+    "description3": "Application Mobile + Responsive Website pour affirmation transgenre et non-binaire.",
+    "appname4": "Vanity Vixen",
+    "role4": "UX Designer",
+    "description4": "Responsive Website pour des tutoriels de maquillage et de coiffure."
 }
