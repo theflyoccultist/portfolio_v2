@@ -2,17 +2,19 @@ import { Col, Container, Row } from "react-bootstrap";
 import AnimatedButton from "../../components/AnimatedButton";
 import { Divider } from "../../components/Divider";
 import './Evo11.css'
+import { useTranslation } from 'react-i18next';
 
 export default function Evo11() {
+    const { t } = useTranslation('projects');
     return (
         <Container id="evo11" className="evo11-container">
             <div className="text-center" style={{ paddingBottom: "30px" }}>
-                <h2>Evo 11</h2>
+                <h2>{t('project1')}</h2>
             </div>
             
             <div className="text-center" style={{ paddingBottom: "30px" }}>
-                <h5>Application Mobile + Responsive Website pour affirmation transgenre</h5>
-                <h5  style={{ fontWeight: "bold" }}>Projet de Portfolio UX Design</h5>
+                <h5>{t('subtitle1')}</h5>
+                <h5  style={{ fontWeight: "bold" }}>{t('projecttype1')}</h5>
             </div>
 
             <div className="justify-content-center">
@@ -25,20 +27,20 @@ export default function Evo11() {
 
             <Row xs={1} md={1} lg={1} className='align-items-center text-left'>
                 <Col>
-                    <strong>Le Projet: </strong>Evo11 est une application mobile ayant pour objectif de venir en aide aux personnes transgenres qui ont besoin d'affirmations et d'un sens de progrès dans leur vie quotidienne. Son développement et sa recherche s'est faite uniquement au sein de sa communauté.
+                    <strong>{t('theproject1')} </strong>{t('theproject1.1')}
                 </Col>
                 <Col>
-                    <strong>Problématique: </strong>Bien qu’il existe des sites de ressources inclusifs pour permettre aux personnes transgenres de s’informer des étapes de leur transition,  il n’existe pas d’application pour les accompagner au quotidien et à se repérer dans leur parcours.
+                    <strong>{t('theproblematic1')}</strong>{t('theproblematic1.1')}
                 </Col>
                 <Col>
-                    <strong>Objectif: </strong>Créer une application mobile pour aider les utilisateurs de cette communauté à s’affirmer au cours du temps, quelque chose qui les aideraient à garder une trace de leurs petits progrès et victoires quotidiennes.
+                    <strong>{t('theobjective1')}</strong>{t('theobjective1.1')}
                 </Col>
                 <Col></Col>
                 <Col>
-                    <strong>Mon rôle: </strong>Lead UX designer pour l'application mobile, et le responsive website pour mobile iOS et PC.
+                    <strong>{t('therole1')}</strong>{t('therole1.1')}
                 </Col>
                 <Col>
-                    <strong>Responsabilités : </strong>Conduite des interviews, création de wireframes papier et digital, prototypes basse et haute fidélité, conduite des études d'usabilité, responsive design et prise en compte de l'accessibilité.
+                    <strong>{t('responsabilities1')}</strong>{t('responsabilities1.1')}
                 </Col>
                 <Col></Col>
                 <Divider />
@@ -47,85 +49,67 @@ export default function Evo11() {
 
             <Row xs={1} md={1} lg={1} className='align-items-center text-left'>
                 <Col>
-                    <h5><strong>La recherche utilisateurs</strong></h5>
+                    <h5><strong>{t('userresearch1')}</strong></h5>
                 </Col>
                 <Col>
-                    Avant de commencer les prototypes, j’ai mené des recherches utilisateur dans mon entourage. Trouver des participants afin de répondre à mes nombreuses questions - ayant pour objectif de comprendre leurs joies et leurs frustrations, à été un réel défi. Les réponses obtenues ont cependant values l’investissement personnel.
+                    {t('userresearch1.1')}
                 </Col>
                 <Col>
-                    Les personnes interrogés étaient dans des étapes diverses de leur transition, avec des types de parcours très différentes d’un individu à l’autre. Mais tous avaient des étapes à anticiper, à s’en rappeler, où sur lesquels ils avaient besoin d’en savoir plus.
+                    {t('userresearch1.2')}
                 </Col>
                 <Col>
-                    Que ce soit une affirmation sociale, médicale où légale, il pouvait aussi être difficile de se repérer et de connaître les occupations nécessaires de leur propre parcours.
+                    {t('userresearch1.3')}
                 </Col>
                 <Col></Col>
                 <Col>
-                    <u>1. Exploration de l'identité :</u><br/>
-                    - Comment décririez-vous votre identité de genre et comment a-t-elle évolué au fil du temps ?<br/>
-                    - Pouvez-vous partager des moments ou des réalisations charnières liés à votre identité de genre ?
+                    <u>{t('q1.1')}</u><br/>
+                    {t('q1.1.1')}<br/>
+                    {t('q1.1.2')}
                 </Col>
                 <Col>
-                    <u>2. Parcours de transition :</u><br/>
-                    - Quelles étapes de votre transition ont été les plus importantes ou les plus difficiles ?<br/>
-                    - Y a-t-il des aspects spécifiques du processus de transition sur lesquels vous souhaiteriez avoir plus de soutien ou d'informations ?
+                    <u>{t('q1.2')}</u><br/>
+                    {t('q1.2.1')}<br/>
+                    {t('q1.2.2')}
                 </Col>
                 <Col>
-                    <u>3. Systèmes d'assistance :</u><br/>
-                    - Qui a été une source de soutien cruciale pour vous tout au long de votre parcours en matière de genre ?<br/>
-                    - De quelles manières préférez-vous recevoir le soutien de vos amis, de votre famille ou de la communauté ?
+                    <u>{t('q1.3')}</u><br/>
+                    {t('q1.3.1')}<br/>
+                    {t('q1.3.2')}
                 </Col>
                 <Col>
-                    <u>4. Utilisation de la technologie et des applications :</u><br/>
-                    - Utilisez-vous actuellement des applications ou des plateformes en ligne pour obtenir une assistance liée à votre identité de genre ?<br/>
-                    - Quelles fonctionnalités trouvez-vous les plus utiles ou les plus manquantes dans les plateformes existantes ?
+                    <u>{t('q1.4')}</u><br/>
+                    {t('q1.4.1')}<br/>
+                    {t('q1.4.2')}
                 </Col>
                 <Col>
-                    <u>5. Défis quotidiens :</u><br/>
-                    - Quels sont les défis courants auxquels vous êtes confrontés dans votre vie quotidienne liés à votre identité de genre ?<br/>
-                    - Y a-t-il des situations spécifiques où vous ressentez le besoin d'une validation ou d'une affirmation supplémentaire ?
+                    <u>{t('q1.5')}</u><br/>
+                    {t('q1.5.1')}<br/>
+                    {t('q1.5.2')}
                 </Col>
                 <Col>
-                    <u>6. Préférences d'affirmation :</u><br/>
-                    - Comment recherchez-vous et recevez-vous personnellement l’affirmation et la validation de votre identité de genre ?<br/>
-                    - Y a-t-il des affirmations ou des messages spécifiques qui vous interpellent le plus ?
+                    <u>{t('q1.6')}</u><br/>
+                    {t('q1.6.1')}<br/>
+                    {t('q1.6.2')}
                 </Col>
                 <Col>
-                    <u>7. Engagement communautaire :</u><br/>
-                    - De quelles manières interagissez-vous avec la communauté transgenre, à la fois en ligne et hors ligne ?<br/>
-                    - Y a-t-il des événements communautaires, des forums ou des groupes de soutien auxquels vous participez activement ?
+                    <u>{t('q1.7')}</u><br/>
+                    {t('q1.7.1')}<br/>
+                    {t('q1.7.2')}
                 </Col>
                 <Col>
-                    <u>8. Problèmes de confidentialité et de sécurité :</u><br/>
-                    - Quelle importance accordez-vous à la confidentialité et à la sécurité lorsque vous utilisez des applications ou des plateformes liées à votre identité de genre ?<br/>
-                    - Y a-t-il des mesures ou des fonctionnalités spécifiques que vous aimeriez voir pour garantir un espace en ligne sécurisé ?
+                    <u>{t('q1.8')}</u><br/>
+                    {t('q1.8.1')}<br/>
+                    {t('q1.8.2')}
                 </Col>
                 <Col>            
-                    <u>9. Intersectionnalité :</u><br/>
-                    - Comment d'autres aspects de votre identité, tels que la race, l'origine ethnique ou le statut socio-économique, se recoupent-ils avec votre expérience en tant qu'individu transgenre ?<br/>
-                    - Y a-t-il des défis ou des expériences uniques auxquels vous êtes confrontés en raison de ces intersections ?
+                    <u>{t('q1.9')}</u><br/>
+                    {t('q1.9.1')}<br/>
+                    {t('q1.9.2')}
                 </Col>
                 <Col>
-                    <u>10. Aspirations futures :</u><br/>
-                    - Quelles sont vos aspirations pour l'avenir concernant votre identité de genre et votre implication communautaire ?<br/>
-                    - Selon vous, existe-t-il des outils ou des ressources spécifiques qui pourraient améliorer votre parcours ?
-                </Col>
-                <Col></Col>
-                <Divider />
-                <Col></Col>
-            </Row>
-
-            <Row xs={1} md={1} lg={1} className='align-items-center text-left'>
-                <Col>
-                    <h5><strong>Audit Compétitif</strong></h5>
-                </Col>
-                <Col>
-                    Pour cet audit en particulier, je ne choisirais pas réellement le terme "compétitif" puisque le projet à pour but de servir au bien être de ma communauté. Il s'agirait plutôt de sources d'inspirations. J'ai pu visiter des pages de type hub d'informations pour mon site web, et j'ai pu tester des applications existantes qui visent l'affirmation transgenre.
-                </Col>
-                <Col>
-                    C'est à cette occasion-mà que j'ai pu découvrir qu'il n'existait pas d'application de ce type en français, où disponible sur le territoire européen.
-                </Col>
-                <Col>
-                    Lien vers l'audit
+                    <u>{t('q1.10')}</u><br/>
+                    {t('q1.10.1')}<br/>
+                    {t('q1.10.2')}
                 </Col>
                 <Col></Col>
                 <Divider />
@@ -134,10 +118,28 @@ export default function Evo11() {
 
             <Row xs={1} md={1} lg={1} className='align-items-center text-left'>
                 <Col>
-                    <h5><strong>User Persona</strong></h5>
+                    <h5><strong>{t('competitiveaudit1')}</strong></h5>
                 </Col>
                 <Col>
-                    En regroupant les résultats de mes interviews initiaux, je fus capable de créer deux personas, Annabelle et Damien. Il s'agissait de personas avec des objectifs différents, et pour l'idée d'application et les moyens que j'avais,  c'était Annabelle qui me convenait le mieux.
+                    {t('competitiveaudit1.1')}
+                </Col>
+                <Col>
+                    {t('competitiveaudit1.2')}
+                </Col>
+                <Col>
+                    Lien vers l'audit (a ajouer)
+                </Col>
+                <Col></Col>
+                <Divider />
+                <Col></Col>
+            </Row>
+
+            <Row xs={1} md={1} lg={1} className='align-items-center text-left'>
+                <Col>
+                    <h5><strong>{t('userpersona1')}</strong></h5>
+                </Col>
+                <Col>
+                    {t('userpersona1.1')}
                 </Col>
                 <Col className="text-center">
                     <img src="https://www.rinkakuworks.com/public/images/evo11/annabelle.webp" alt="annabelle user persona" loading="lazy"/>
@@ -146,7 +148,7 @@ export default function Evo11() {
                 <Divider />
                 <Col></Col>
                 <Col className="text-center">
-                    <h5><strong>Processus d'idéation: crazy eights et page d'accueil</strong></h5>
+                    <h5><strong>{t('ideation1')}</strong></h5>
                 </Col>
             </Row>
             <Row xs={1} md={2} lg={2} className="text-center">
@@ -158,7 +160,7 @@ export default function Evo11() {
                 <Divider />
                 <Col></Col> 
                 <Col>
-                    <h5><strong>Prototype Basse Fidélité</strong></h5>
+                    <h5><strong>{t('lowfidelity1')}</strong></h5>
                 </Col>     
             </Row>
             <Row xs={1} md={2} lg={2} className="text-left">
@@ -166,23 +168,23 @@ export default function Evo11() {
                     <img src="https://www.rinkakuworks.com/public/images/evo11/lowfiwelcomepage.webp" alt="low fidelity prototype welcome page" loading="lazy"/>
                 </Col>
                 <Col>
-                    <br/>Durant la conception du wireframe papier, j'ai réfléchi à une page d'accueil regroupant tous les modules en un seul endroit. Je suis resté sur cette idée lors de la transition vers le format digital afin de proposer une interface simple et intuitive.<br/><br/>
+                    <br/>{t('lowfidelity1.1')}<br/><br/>
 
-                    Trois modules principaux structurent la page :<br/>
+                    {t('lowfidelity1.2')}<br/>
                         <ul>
-                            <li>Module photos : Permet d’épingler des images inspirantes ou personnelles. Le bouton "Edit" facilite leur gestion.</li>
-                            <li>Routine matinale : Une checklist centralisée pour suivre des tâches quotidiennes (hydratation, maquillage, etc.), avec la possibilité de personnalisation via "Edit".</li>
-                            <li>Checklist longue durée : Regroupe des objectifs à moyen ou long terme (ex. : "Trouver un emploi"), affichés horizontalement pour les différencier des routines journalières.</li>
+                            <li>{t('lowfidelity1.3')}</li>
+                            <li>{t('lowfidelity1.4')}</li>
+                            <li>{t('lowfidelity1.5')}</li>
                         </ul><br/>
-                        Enfin, pour ajouter une touche de motivation supplémentaire, une section de citations inspirantes ("Daily Quotes") est intégrée en haut de la page. Cela permet de démarrer la journée avec une pensée positive, tout en renforçant l'aspect chaleureux et personnalisé de l'application.
+                        {t('lowfidelity1.6')}<br/>
                 </Col>        
             </Row>
 
             <Row xs={1} md={1} lg={1}>
                 <Col></Col>
                 <Col>
-                    Concernant les écrans restantes, la simplicité d’utilisation fut ma première priorité.<br/>
-                    Je m’attendais aussi à ce que l’utilisateur passe la majorité de son temps sur la page d’accueil, décidant donc de garder le design des autres pages beaucoup plus minimaux.
+                    {t('lowfidelity1.7')}<br/>
+                    {t('lowfidelity1.8')}<br/>
                 </Col>  
             </Row>
             <Row>
@@ -193,31 +195,31 @@ export default function Evo11() {
                 <Divider />
                 <Col></Col> 
                 <Col>
-                    <h5><strong>Etude d'usabilité</strong></h5><br/>
+                    <h5><strong>{t('usabilitytesting1')}</strong></h5><br/>
                 </Col>
                 <Col>
-                    <strong>Type d'étude: </strong>Etude d'usabilité modérée<br/>
+                    <strong>{t('testtype1')}</strong>{t('testtype1.1')}<br/>
                 </Col>
                 <Col>
-                    <strong>Lieu: </strong>Nice et Antibes<br/>
+                    <strong>{t('testplace1')}</strong>{t('testplace1.1')}<br/>
                 </Col>
                 <Col>
-                    <strong>Participants: </strong>4 Candidats<br/>
+                    <strong>{t('testcandidates1')}</strong>{t('testcandidates1.1')}<br/>
                 </Col>
                 <Col>
-                    <strong>Longueur: </strong>Entre 30 et 60 minutes<br/>
+                    <strong>{t('testlength1')}</strong>{t('testlength1.1')}<br/>
                 </Col>
                 <Col>
-                    Pour cet étude-ci, la version basse fidélité du prototype fut testé, m'aidant ainsi à déterminer les révisions nécessaires pour rendre l'expérience de l'application plus intuitif et plaisant. Voici quelques trouvailles :
+                    {t('testresults1')}<br/>
                 </Col>
                 <Col>
-                    <strong>Sécurité: </strong> La confidentialité et la sécurité des données est particulièrement importante parmi les candidats. Il faudrait que l'application puisse fonctionner en local, sans collecte de données et sans connection internet.<br/>
+                    {t('testresults1.1')}<br/>
                 </Col>
                 <Col>
-                    <strong>Continuité: </strong>Il y avait des soucis de continuité qui fut remarquée. Chose qui peut être résolu en utilisant la même forme de boutons pour des thèmes similaires. <br/>
+                    {t('testresults1.2')}<br/>
                 </Col>
                 <Col>
-                    <strong>Simplification: </strong>Dans la version basse fidélité, j’avais inclus une page “entreprises” qui permettait de postuler à des emplois. Il était préférable de la supprimer pour garantir la simplicité de mon app. <br/>
+                    {t('testresults1.3')}<br/>
                 </Col>
             </Row>
 
@@ -233,9 +235,9 @@ export default function Evo11() {
                 <Divider />
                 <Col></Col>
                 <Col>
-                    <h5><strong>Kit UI</strong></h5><br/>
-                    L'orange représente les tâches en cours et le vert représente les tâches terminées.<br/>
-                    A part ceux-là, je fis un choix volontaire de garder les couleurs minimaux.
+                    <h5><strong>{t('uikit1')}</strong></h5><br/>
+                    {t('uikit1.1')}<br/>
+                    {t('uikit1.2')}<br/>
                 </Col>
                 <Col>
                     <img src="https://www.rinkakuworks.com/public/images/evo11/uikit.webp" alt="ui kit" loading="lazy"/> 
@@ -247,7 +249,7 @@ export default function Evo11() {
 
             <Row xs={1} md={1} lg={1} className="text-left">
                 <Col>
-                    <h5><strong>Prototype Haute Fidélité</strong></h5><br/>                       
+                    <h5><strong>{t('highfidelity1')}</strong></h5><br/>                       
                 </Col>
                 <Col>
                     <img src="https://www.rinkakuworks.com/public/images/evo11/hifiprototype.webp" alt="completed high fidelity prototype" loading="lazy"/> 
@@ -259,25 +261,25 @@ export default function Evo11() {
 
             <Row xs={1} md={1} lg={1} className="text-left">
                 <Col>
-                    <h5><strong>Responsive Website (PC)</strong></h5><br/>                     
+                    <h5><strong>{t('responsive1-pc')}</strong></h5><br/>                     
                 </Col>
                 <Col>
-                    Après le prototype haute fidélité terminé, je fus mis au défi de créer également des designs pour un responsive website. Il s'agit simplement d'un site web qui s'adapte aux tailles différents d'écran, pour que ça reste ergonimique facile à lire sur portable, tablette où PC.
+                    {t('responsive1.1')}<br/>
                 </Col>
                 <Col>
-                    Puisque le type d’utilisation de mon application correspond davantage aux téléphones, je décidai de voir le site web comme un petit coin pour faire connaître cette mobile app.
+                    {t('responsive1.2')}<br/>
                 </Col>
                 <Col>
                     <img src="https://www.rinkakuworks.com/public/images/evo11/websitepc.webp" alt="responsive website for PC" loading="lazy"/> 
                 </Col>
                 <Col>
-                    <h5><strong>Responsive Website (iOS)</strong></h5><br/>                    
+                    <h5><strong>{t('responsive1-ios')}</strong></h5><br/>                    
                 </Col>
                 <Col>
-                    Ce prototype montre les étapes finales de la création d'un design web responsive, conçu pour offrir une navigation claire et intuitive quelle que soit la taille de l'écran. Les différentes pages illustrées ici (Accueil, Contact, Info Hub, Notre Mission) présentent un aperçu cohérent et ergonomique pour l'utilisateur, tout en mettant en avant les fonctionnalités principales de l'application.
+                    {t('responsive1.3')}<br/>
                 </Col>
                 <Col>
-                L'accent a été mis sur une expérience utilisateur adaptée principalement aux téléphones, puisque l'application elle-même cible avant tout une utilisation mobile. Chaque section du site est pensée comme un pont vers l'application, permettant aux visiteurs de découvrir ses objectifs, ses valeurs, et ses outils.
+                    {t('responsive1.4')}<br/>
                 </Col>
                 <Col>
                     <img src="https://www.rinkakuworks.com/public/images/evo11/websitemobile.webp" className="shrink" alt="responsive website for mobile" loading="lazy"/> 
@@ -285,7 +287,7 @@ export default function Evo11() {
             </Row>
             <Row xs={1} md={1} lg={1}>
                 <Col>
-                    Voici le plan du site, comme je j'ai intentionné:
+                    <h5><strong>{t('sitemap1')}</strong></h5><br/>
                 </Col>
                 <Col>
                     <img src="https://www.rinkakuworks.com/public/images/evo11/sitemap.webp" alt="sitemap for responsive website" loading="lazy"/> 
@@ -296,19 +298,19 @@ export default function Evo11() {
             </Row>
 
             <Row xs={1} md={1} lg={1} className="text-left">
-                <Col><h5><strong>Conclusions</strong></h5><br/></Col>
+                <Col><h5><strong>{t('conclusion1')}</strong></h5><br/></Col>
                 <Col>
-                    <strong>Impact: </strong>Je suis contente d’avoir pu mener ce projet à bien. Je pense qu’il à pu me faire découvrir des histoires nouvelles, différentes galères qui en valaient bien la peine. Ce métier me passione, je souhaiterais faire davantage de projets comme ceci dans l’avenir.<br/>
+                    {t('conclusion1.1')}<br/>
                 </Col>
                 <Col>
-                    <strong>Ce que j’ai appris: </strong>Peut être plus de compassion. Avoir davantage de courage lorsque je demande de faire des études d’usabilité. Se rendre compte que mon entourage était bien plus enthousiaste de ce projet que je ne le pensais. Je les embêterai pour de futurs études.<br/>
+                   {t('conclusion1.2')}<br/>
                 </Col>
                 <Col></Col>
                 <Col>
                     <ul>
-                        <li>En parallèle à mes études d’UX design, je suis des cours de programmation full stack et de développement d’application mobile. Je pourrais essayer de coder ce projet dans un format application iOS.</li>
-                        <li>Il est possible qu’il y ait des mises à jour pour enrichir l’application de contenu, si c’est un projet que je souhaite continuer.</li>
-                        <li>Je peux peut être aussi penser à des idées de thèmes. Dans l’onglet “Paramètres” du prototype il y a une option de thèmes, et il serait peut être amusant de jouer avec d’autres couleurs où des textures.</li>
+                        <li>{t('conclusion1.3')}</li>
+                        <li>{t('conclusion1.4')}</li>
+                        <li>{t('conclusion1.5')}</li>
                     </ul>                     
                 </Col>
             </Row>
