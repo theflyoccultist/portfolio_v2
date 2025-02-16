@@ -255,5 +255,48 @@
         "conclusion3.2": "What I learned: Not being afraid to let my hobbies and personal tastes express themselves through my projects. Always keeping the user and their issues in mind to adequately meet their needs.",
         "conclusion3.3": "Conduct a new usability study on this high fidelity prototype before potentially sending this design to engineers.",
         "conclusion3.4": "Enrich the website with content and fun tools, allowing the user to better track their progress."
+    },
+    "b": {
+        "1": "Blogging Platform",
+        "2": "Full Stack Web Application",
+        "3": "Autonomous Project",
+        "4": "This blogging platform was designed to document my coding journey, share my learnings and successes, and enhance my experience in web development and deployment.",
+        
+        "5": "Features",
+        "6": "User Authentication: The platform allows users to create an account and log in securely using a token refresh system.",
+        "7": "Post Management (CRUD): Users can create a new post, view it on their portfolio, edit it later, or delete it. All changes are visible instantly.",
+        "8": "Custom Text Editor (Markdown): For creating and editing posts, after trying React Quill, I opted for a simple Markdown text editor, allowing more flexibility and ease of writing, while spending less time debugging.",
+        "9": "Responsive Design: The platform automatically adapts to provide an optimal experience, whether on mobile or desktop.",
+        "10": "Robust Deployment: I used a custom .htaccess configuration for deployment on an Apache server, ensuring smooth routing and easy updates.",
+
+        "11": "Planned Features",
+        "12": "Tags and Categories: To organize posts and allow visitors to filter content according to their interests.",
+        "13": "Public/Private Display: A feature to save a draft and publish it later.",
+        "14": "Analytics: Track the number of visitors per post or category, and analyze the overall performance of the blog.",
+        "15": "Comments: Allow visitors to leave feedback or interact with the author.",
+        "16": "Challenges Faced",
+        "17": ".htaccess File Configuration: Server routing was particularly complex. For example, I encountered white screens even though the JavaScript and HTML files were correctly found. I also had to resolve MIME type issues and correctly configure backend request addresses. For more details, you can check this detailed article.",
+        "18": "CORS Policies: I implemented a strict CORS policy in the backend to secure API calls from the frontend. I also configured exceptions to allow GET requests from my portfolio.",
+        "19": "React Quill Customization: I tried to adapt the editor to add features, such as code block integration, to meet my specific needs. I eventually replaced it with a more minimalist editor.",
+
+        "20": "Architecture Diagram",
+        "21": "A diagram illustrating the relationship between the different components of the platform.",
+        "22": "Deployment Process",
+        "23": "Creating a frontend project with React, TypeScript, and Vite.",
+        "24": "Setting up a backend API with Node.js and Express.js.",
+        "25": "Configuring an .htaccess file to handle routing and proxies.",
+        "26": "Thorough testing on the Apache server (login, post creation, logout, etc.)",
+        
+        "27": "Screenshots",
+
+        "28": "Code Examples",
+        "29": "Text Editor Customization",
+        "30": "Backend Controller for Creating a New Post",
+        "31": "Lessons Learned",
+        "32": "This project allowed me to understand the intricacies of deploying a full-stack application in a professional environment. It also taught me how to solve complex issues related to deployment and server configuration.",
+        "33": "Starting with a rudimentary version deployment was a strategic approach, as it allowed me to identify malfunctions in a targeted manner while showing a functional version of the application. Using GitHub to manage backups proved valuable when I had to restore files after errors.",
+
+        "34": "Conclusion",
+        "35": "As my development skills improve, this platform will continue to evolve. It will meet my growing needs and represent a showcase of my technical skills. I have confidence in this project because it is not just a coding exercise, but an application I actively use to document my journey and enrich my portfolio."
     }
 }

@@ -257,5 +257,48 @@
         "conclusion3.2": "Ce que j'ai appris: Ne pas avoir peur de laisser mes loisirs et mes goûts personnels s'exprimer à travers mes projets. Avoir toujours à l'esprit l'utilisateur et ses problématiques pour répondre adéquatement à ses besoins.",
         "conclusion3.3": "Conduire une nouvelle étude d'usabilité sur ce prototype haute fidélité, avant de potentiellement envoyer ce design à des ingénieurs.",
         "conclusion3.4": "Enrichir le site web de contenu et d'outils ludiques, permettant à l'utilisateur de mieux suivre ses progrès."
+    },
+    "b": {
+        "1": "Plateforme de Blogging",
+        "2": "Application web Full stack",
+        "3": "Projet autonome",
+        "4": "Cette plateforme de blogging a été conçue pour documenter mon parcours en codage, partager mes apprentissages et mes réussites, et enrichir mon expérience en développement web et en déploiement.",
+        
+        "5": "Fonctionnalités",
+        "6": "Authentification utilisateur: La plateforme permet de créer un compte utilisateur et de se connecter de manière sécurisée grâce à un système de rafraîchissement des tokens.",
+        "7": "Gestion des posts (CRUD): Les utilisateurs peuvent créer un nouvel article, le visualiser sur leur portfolio, l'éditer ultérieurement ou le supprimer. Toutes les modifications sont visibles instantanément.",
+        "8": "Éditeur de texte personnalisé (Markdown): Pour la création et l'édition des articles, après avoir essayé React Quill, j'ai plutôt opté pour un simple éditeur de texte Markdown, me permettant davantage de flexibilité et de facilité d'écriture, tout en me permettant de passer moins de temps à debug.",
+        "9": "Responsive design: La plateforme s'adapte automatiquement pour offrir une expérience optimale, que ce soit sur mobile ou sur ordinateur.",
+        "10": "Déploiement robuste: J'ai utilisé une configuration .htaccess personnalisée pour le déploiement sur un serveur Apache, garantissant un routage fluide et des mises à jour simples.",
+
+        "11": "Fonctionnalités Prévues",
+        "12": "Tags et catégories: Pour organiser les articles et permettre aux visiteurs de filtrer les contenus selon leurs intérêts.",
+        "13": "Affichage public/privé: Une fonctionnalité pour sauvegarder un brouillon et le publier ultérieurement.",
+        "14": "Analytics: Suivre le nombre de visiteurs par article ou catégorie, et analyser les performances globales du blog.",
+        "15": "Commentaires: Offrir aux visiteurs la possibilité de laisser des retours ou d'interagir avec l'auteur.",
+        "16": "Défis rencontrés",
+        "17": "Configuration du fichier .htaccess: Le routage du serveur a été particulièrement complexe. Par exemple, j'ai rencontré des écrans blancs bien que les fichiers JavaScript et HTML aient été correctement trouvés. J'ai également dû résoudre des problèmes de types MIME et configurer correctement les adresses des requêtes backend. Pour en savoir plus, vous pouvez consulter cet article détaillé.",
+        "18": "Politiques CORS: J'ai implémenté une politique CORS stricte dans le backend pour sécuriser les appels API depuis le frontend. J'ai également configuré des exceptions pour autoriser les requêtes GET depuis mon portfolio.",
+        "19": "Personnalisation de React Quill: J'ai essayé d'adapter l'éditeur pour ajouter des fonctionnalités, comme l'intégration de blocs de code, afin de répondre à mes besoins spécifiques. J'ai fini par le supprimer pour la remplacer par un éditeur plus minimaliste.",
+
+        "20": "Diagramme d'Architecture",
+        "21": "Un diagramme illustrant la relation entre les différentes composants de la plateforme.",
+        "22": "Processus de déploiement",
+        "23": "Création d'un projet frontend avec React, TypeScript et Vite.",
+        "24": "Mise en place d'une API backend avec Node.js et Express.js.",
+        "25": "Configuration d'un fichier .htaccess pour gérer le routage et les proxys.",
+        "26": "Tests approfondis sur le serveur Apache (connexion, création d'articles, déconnexion, etc.)",
+        
+        "27": "Captures d'écran",
+
+        "28": "Exemples de Code",
+        "29": "Customisation de l'éditeur de texte",
+        "30": "Contrôleur backend pour la création d'un nouvel article",
+        "31": "Leçons apprises",
+        "32": "Ce projet m'a permis de comprendre les subtilités du déploiement d'une application full-stack dans un environnement professionnel. Il m'a également appris à résoudre des problèmes complexes liés au déploiement et à la configuration des serveurs.",
+        "33": "Commencer par déployer une version rudimentaire a été une approche stratégique, car cela m'a permis d'identifier les dysfonctionnements de manière ciblée tout en montrant une version fonctionnelle de l'application. Utiliser GitHub pour gérer les sauvegardes s'est avéré précieux lorsque j'ai dû restaurer des fichiers après des erreurs.",
+
+        "34": "Conclusion",
+        "35": "Au fur et à mesure que mes compétences en développement se perfectionnent, cette plateforme continuera d'évoluer. Elle répondra à mes besoins croissants et représentera une vitrine de mes compétences techniques. J'ai confiance en ce projet, car il n'est pas seulement un exercice de codage, mais une application que j'utilise activement pour documenter mon parcours et enrichir mon portfolio."
     }
 }
