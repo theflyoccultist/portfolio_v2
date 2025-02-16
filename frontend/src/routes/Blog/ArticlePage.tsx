@@ -2,16 +2,16 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Container } from "react-bootstrap";
-import DOMPurify from "dompurify";
-import "./Blog.css";
-
+import ReactMarkdown from "react-markdown";
+import rehypePrism from "rehype-prism";
+import remarkGfm from "remark-gfm";
 import Prism from "prismjs";
+
+import "./Blog.css";
 import "prismjs/themes/prism-okaidia.css";
 import "prismjs/components/prism-typescript";
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-bash";
-import "prismjs/components/prism-rust";
-import "prismjs/components/prism-python";
 
 const apiUrl = import.meta.env.VITE_API_URL
 
@@ -59,28 +59,8 @@ export default function ArticlePage() {
     }, [id]);
 
     useEffect(() => {
-        const adjustCodeBlocks = () => {
-            const preElements = document.querySelectorAll<HTMLPreElement>("pre.ql-syntax");
-            preElements.forEach((pre) => {
-                const textContent = pre.textContent || '';
-                const lines = textContent.split('\n');
-                const firstLine = lines[0]?.trim().toLowerCase() || 'typescript';
-                const language = ['typescript', 'javascript', 'bash', 'rust', 'python'].includes(firstLine)
-                    ? firstLine
-                    : "typescript";
-
-                if (!pre.querySelector("code")) {
-                    const codeElement = document.createElement("code");
-                    codeElement.className = `language-${language}`;
-                    codeElement.innerHTML = DOMPurify.sanitize(pre.innerHTML);
-                    pre.innerHTML = "";
-                    pre.appendChild(codeElement);
-                }
-            });
-            Prism.highlightAll();
-        };
-        if (blogPost?.content) adjustCodeBlocks();
-    }, [blogPost?.content])
+        Prism.highlightAll();
+        }, [blogPost?.content])
     
     if (loading) {
         return (
@@ -112,10 +92,15 @@ export default function ArticlePage() {
                 <h1 className="hero-title" >{blogPost.title}</h1>
                 <div className="card-text">     
                     <p className="author text-muted">by {blogPost.author}</p>
-                    <img src={blogPost.thumbnail} alt={blogPost.title} className="hero-image"/>
-                    <p dangerouslySetInnerHTML={{
-                        __html: DOMPurify.sanitize(blogPost.content),
-                    }}
+                    <img
+                         src={blogPost.thumbnail} 
+                        alt={blogPost.title} 
+                        className="hero-image"
+                    />
+                    <ReactMarkdown
+                        children={blogPost.content}
+                        remarkPlugins={[remarkGfm]}
+                        rehypePlugins={[rehypePrism]}
                     />
                     <p  className="mb-2 text-muted">{convertDate(blogPost.publishedAt)}</p>                
                 </div>
