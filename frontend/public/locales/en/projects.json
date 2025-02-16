@@ -181,5 +181,79 @@
         "conclusion2.3": "More compatibility with screen readers and tests with visually impaired people, so the application allows access to concerts for everyone.",
         "conclusion2.4": "A messaging module to allow spectators to get to know each other and make plans before meeting at the concert venue.",
         "conclusion2.5": "After completing the high fidelity prototype and usability studies, I tried to imagine some additional capabilities for a potential version 2.0. These are some ideas I had at the beginning of the app's design."
+    },
+    "vanityvixen": {
+        "project3": "Vanity Vixen",
+        "subtitle3": "Responsive Website for Makeup and Hairstyling Tutorials",
+        "subtitle3.1": "UX Design Portfolio Project",
+        "theproject3": "The Project ",
+        "theproject3.1": "Vanity Vixen is a site specially designed for makeup tutorials. It is intended for users of all types, regardless of gender or skill level. The goal is to offer looks for everyday wear, as well as more extravagant looks for special occasions.",
+        "theproblematic3": "The Problematic ",
+        "theproblematic3.1": "There are many makeup tutorials on YouTube, but it is easy for users to get distracted or procrastinate due to the sheer amount of content available. Additionally, there is no way for users to track their progress.",
+        "theobjective3": "The Objective ",
+        "theobjective3.1": "Design a specialized site for makeup tutorials that is user-friendly for beginners, with resources to find products, step-by-step transcriptions, and progress tracking.",
+        "therole3": "My Role ",
+        "therole3.1": "UX designer for the PC and mobile versions of the website.",
+        "responsabilities3": "My Responsibilities ",
+        "responsabilities3.1": "Conducting interviews, creating paper and digital wireframes, low and high fidelity prototypes, conducting usability studies, responsive design, and considering accessibility.",
+    
+        "userresearch3": "User Research",
+        "userresearch3.1": "The initial step for creating this prototype was a user survey with five people who were likely to use makeup. I made sure to interview people of different skill levels and genders.",
+        "userresearch3.2": "The interview questions were as follows:",
+
+        "q3.1": "How often do you watch makeup tutorials?",
+        "q3.2": "Why do you wear makeup / why would you like to learn makeup?",
+        "q3.3": "What prevents you from being more consistent with makeup?",
+        "q3.4": "What style of makeup do you like to do / would you like to do?",
+        "q3.5": "If there was a platform specifically dedicated to makeup tutorials, what features would you like to see?",
+    
+        "results3": "Thanks to the results obtained from these surveys, I was able to identify four pain points.",
+        "r3.1": "Procrastination: Users may lack encouragement or have too many distractions to practice regularly.",
+        "r3.2": "Makeup Products: It is difficult, especially for beginners, to know which essential products are ideal to start with.",
+        "r3.3": "Accessibility of Tutorials: Tutorials often lack step-by-step transcriptions and links to find the products used.",
+        "r3.4": "Community: Interviewees expressed the need for a community to share honest and constructive feedback without judgment.",
+    
+        "personas3": "Personas",
+        "usermap3": "User Journey Map",
+        "sitemap3": "Sitemap",
+        "sitemap3.1": "Developing a sitemap before moving on to wireframing was a necessity for this project. The prototype I was going to present would focus on the 'Tutorials' section, but I needed to find a way to organize all the future information.",
+    
+        "wireframe3": "Paper Wireframes",
+        "wireframe3.1": "Thanks to the sitemap, I was able to think of different versions of the homepage on paper.",
+        "wireframe3.2": "I wanted something that would be fun to navigate for the user, while keeping a focus on the essential: makeup tutorials.",
+        "wireframe3.3": "My prototype was first designed for a PC version, then adapted for mobile screen sizes.",
+
+        "lowfidelity3": "Low Fidelity Prototype",
+        "lowfidelity3.1": "After creating the paper wireframes, transitioning to a low fidelity prototype was simple. I prioritized ease of use and site clarity, inspired by existing sites like Sephora, Nyx, and MAC cosmetics.",
+        "lowfidelity3.2": "To create my low fidelity prototype, I first tried to see what types of links users are more likely to click to navigate through a website. With my user research in hand, I also did my best to ensure my prototype could address the identified pain points.",
+    
+        "usabilitytesting3": "Usability Studies",
+        "testtype3": "Test type ",
+        "testtype3.1": "Navigation testing",
+        "testplace3": "Place ",
+        "testplace3.1": "Nice and Antibes, France",
+        "testcandidates3": "Candidates ",
+        "testcandidates3.1": "5 people",
+        "testlength3": "Length ",
+        "testlength3.1": "1 hour",
+
+        "testresults3": "Testing my low fidelity prototype with external people provided valuable insights.",
+        "testresults3.1": "Tutorial Page Organization: Similar to a cooking recipe, it was necessary to present the products used before the makeup steps.",
+        "testresults3.2": "Product Brands: Users wanted detailed information on each product: shades, brand, price, and the brand's commitment to environmental causes.",
+        "testresults3.3": "Inclusivity: The main goal of my project being inclusivity, I should have offered tutorials for men as well from the start.",
+        "testresults3.4": "Based on the usability study, I was able to make significant improvements to my website, both the mobile and PC versions. For example, I thought about an attractive color palette and highlighted navigation buttons.",
+        "transition3": "To meet user needs, I made sure to add the names and shades of the products referenced in the demonstration videos. On the mobile version, the tab for used products comes before the step-by-step makeup tutorial.",
+        "uikit3": "User Interface Kit",
+
+        "highfidelity3": "High Fidelity Prototype (PC)",
+        "highfidelity3.1": "The user flow remained unchanged for my new iteration, the changes made were mainly to optimize usability and visual appeal.",
+        "highfidelity3.2": "High Fidelity Prototype (Android)",
+        "highfidelity3.3": "Working on the mobile version of my site was a high priority from the start. I wanted to offer an identical user experience, whether accessed from a PC or a smartphone.",
+
+        "conclusion3": "Conclusions",
+        "conclusion3.1": "Impact: The target users for whom I wanted to design this application mostly stated that they would like to use this kind of site, whether they are complete beginners or advanced.",
+        "conclusion3.2": "What I learned: Not being afraid to let my hobbies and personal tastes express themselves through my projects. Always keeping the user and their issues in mind to adequately meet their needs.",
+        "conclusion3.3": "Conduct a new usability study on this high fidelity prototype before potentially sending this design to engineers.",
+        "conclusion3.4": "Enrich the website with content and fun tools, allowing the user to better track their progress."
     }
 }

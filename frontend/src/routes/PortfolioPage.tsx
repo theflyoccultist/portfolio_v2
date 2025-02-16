@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 
 export default function PortfolioPage() {
     const { t } = useTranslation('common');
-
     return(
         <div className="container mt-5">
                 <div className="justify-content-center">
