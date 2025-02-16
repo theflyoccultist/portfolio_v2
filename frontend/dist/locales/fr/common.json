@@ -1,0 +1,41 @@
+{
+    "navBarHome": "Portfolio",
+    "navBarAbout": "A propos",
+    "navBarContact": "Contact",
+
+    "buttonViewWorks": "Voir Mes Projets",
+    "buttonViewResume": "Voir Mon CV",
+    "buttonLoading": "Envoi...",
+    "buttonSendEmail": "Envoyer l'e-mail",
+
+    "welcome": "Bonjour, je suis Rin",
+    "welcome2": "Je travaille dans le développement web, avec pour objectif de rendre le quotidien à tous plus simple. J'ai un goût pour l'apprentissage continu, la résolution de problèmes et la compréhension de sujets complexes.",
+
+    "about-intro": "En tant que développeuse, mon objectif principal est de concevoir des expériences qui enrichissent le quotidien des utilisateurs. C'est pourquoi son expérience doit être intuitive et centrée sur eux.",            
+    "aboutme": "Mon chemin pour devenir développeuse fullstack ",
+    "aboutme2": "a débuté pendant mes études en tant que designer UX. J'étais de plus en plus curieuse de comprendre le code derrière les applications et les sites web que nous utilisons quotidiennement. Cette curiosité m'a poussée à rapidement passer de mes premières expérimentations sur HTML à des projets plus complexes. Inspirée par ces premiers apprentissages, j'ai été motivée à approfondir mes connaissances en programmation.",
+    "passion": "Ce qui me plaît le plus dans le développement, ",
+    "passiontext": "c'est de voir mes créations interagir avec les utilisateurs dans leur quotidien. Grâce à mon parcours en lycée technique et à mon expérience en ingénierie du son, j'ai acquis des compétences à la fois analytiques et créatives, que j'applique aujourd'hui dans mon travail de développement. Ce mélange unique de design et de technique me permet de concevoir des solutions à la fois fonctionnelles et centrées sur l'utilisateur.",
+    "hobbies": "Lorsque je ne suis pas devant mon ordinateur, je me consacre à la création musicale et à l'écriture. J'ai toujours été attirée par les formes d'expression artistique, ce qui explique ma principale motivation : créer des applications qui résonnent avec les utilisateurs et leur offrent des expériences enrichissantes et engageantes.",
+    "tools": "Outils",
+    "skillset": "Compétences",
+    "pw": "Prototypages et Wireframes",
+    "agile": "Principes du développement agile",
+
+    "contact": "Connectons-nous!",
+    "contact2": "Vous souhaitez travailler avec moi, ou simplement discuter ? Envoyez-moi un message et explorons les possibilités.",
+
+    
+    "appname1": "Plateforme de Blogging",
+    "role1": "Développeuse Fullstack",
+    "description1": "Une plateforme de blogging intégré à mon portfolio, qui me permet de partager mes projets et mes expériences.",
+    "appname2": "Simple Plan",
+    "role2": "UX Designer",
+    "description2": "Application Mobile de réservation de concerts, pour une salle de concert locale.",
+    "appname3": "Evo11",
+    "role3": "UX Designer",
+    "description3": "Application Mobile + Responsive Website pour affirmation transgenre et non-binaire.",
+    "appname4": "Vanity Vixen",
+    "role4": "UX Designer",
+    "description4": "Responsive Website pour des tutoriels de maquillage et de coiffure."
+}

@@ -51,11 +51,6 @@ export default function BlogList() {
 
     const startIndex = (currentPage - 1) * itemsPerPage;
     const currentItems = blogPosts.slice(startIndex, startIndex + itemsPerPage);
-
-    const truncate = (text: string, length: number): string => {
-        if (text.length <= length) return text;
-        return text.substring(0, length).trimEnd() + '...';
-    };
     
 
     return (
@@ -73,7 +68,6 @@ export default function BlogList() {
                             id={blog.id}
                             title={blog.title}
                             thumbnail={blog.thumbnail}
-                            excerpt={truncate(blog.content, 60)}
                         />
 
                     ))

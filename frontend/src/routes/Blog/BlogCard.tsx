@@ -2,16 +2,14 @@ import React from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import "./BlogCard.css";
-import DOMPurify from "dompurify";
 
 interface BlogCardProps {
     id: number;
     title: string;
     thumbnail: string;
-    excerpt: string;
 }
 
-const BlogCard: React.FC<BlogCardProps> = ({ id, title, thumbnail, excerpt }) => {
+const BlogCard: React.FC<BlogCardProps> = ({ id, title, thumbnail }) => {
     
     return(
         <Card key={id} className='blog-card'>
@@ -23,10 +21,6 @@ const BlogCard: React.FC<BlogCardProps> = ({ id, title, thumbnail, excerpt }) =>
                 </Col>
                 <Col>
                 <Card.Title className='card-title'>{title}</Card.Title>
-                <Card.Text className='card-dezcription' dangerouslySetInnerHTML={{
-                    __html: DOMPurify.sanitize(excerpt),
-                }}
-                />
                 </Col>
             </Row>
             </Card.Body>
