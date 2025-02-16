@@ -13,7 +13,7 @@ export default function Footer() {
                 </Row>
                 <Row>
                     <Col className="text-center text-md-left">
-                        <p>&copy; 2024 Rin. All rights reserved.</p>
+                        <p>&copy; 2025 Rin. All rights reserved.</p>
                     </Col>
                 </Row>
             </Container>

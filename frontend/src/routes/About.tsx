@@ -19,16 +19,19 @@ export default function AboutPage() {
                     <img src="https://rinkakuworks.com/public/images/rinkaku.png" alt="My Image" className='img-fluid mb-3' />
                 </Col>
                 <Col className='aboutme-text'>
-                    <p><strong>{t('aboutme')}</strong>
-                        {t('aboutme2')}
+                    <p><strong>{t('aboutme')}</strong><br/>
+                        {t('aboutme2')}<br/>
+                        {t('aboutme3')}<br/>
+                        {t('aboutme4')}
                    </p>
 
-                    <p><strong>{t('passion')}</strong>
-                        {t('passiontext')}
+                    <p><strong>{t('passion')}</strong><br/>
+                        {t('passiontext')}<br/>
+                        {t('passiontext2')}
                     </p>
 
                     <p>
-                        {t('hobbies')}
+                        <strong>{t('hobbies')}</strong>
                     </p>
 
                 </Col>
@@ -47,24 +50,24 @@ export default function AboutPage() {
                 <Col className='text-center'>
                     <ul>
                         <h3>{t('tools')}</h3>
+                        <li>Linux</li>
+                        <li>Valgrind</li>
                         <li>GitHub (Version Control, Project Management)</li>
                         <li>Docker</li>
                         <li>cPanel</li>
                         <li>Mysql, Postgres, MongoDB</li>
-                        <li>Figma</li>
-                        <li>Trello</li>
                     </ul>
                 </Col>   
                 <Col className='text-center'>
                     <ul>
                         <h3>{t('skillset')}</h3>
-                        <li>React.js</li>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>Javascript</li>
+                        <li>C / C++</li>
+                        <li>Go</li>
+                        <li>Rust</li>
+                        <li>Python</li>
+                        <li>Ruby</li>
+                        <li>React.js / Node.js</li>
                         <li>Typescript</li>
-                        <li>Node.js</li>
-                        <li>Express</li>
                         <li>{t('pw')}</li>
                         <li>{t('agile')}</li>
                     </ul>
