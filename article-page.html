@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Post</title>
     <link rel="icon" type="image" href="https://rinkakuworks.com/public/images/rinkakulogo.png">
-    <link rel="stylesheet" href="./static/98&XP/XP.css">
-    <link rel="stylesheet" href="./static/prism.css">
+    <link rel="stylesheet" href="/static/98&XP/XP.css">
+    <link rel="stylesheet" href="/static/prism.css">
     
-    <script src="./static/htmx.min.js"></script>
-    <script src="./static/prism.js" defer></script>
-    <script src="./static/marked.min.js" defer></script>
-    <script src="./static/article.js" defer></script>
+    <script src="/static/htmx.min.js"></script>
+    <script src="/static/prism.js" defer></script>
+    <script src="/static/marked.min.js" defer></script>
+    <script src="/static/article.js" defer></script>
 </head>
 <body style="padding: 1% 2%;">
     <style>
         body {
-            background-image: url("https://www.rinkakuworks.com/public/images/bliss.webp");
+            background-image: url("https://www.rinkakuworks.com/public/images/bliss-dark.webp");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
@@ -31,6 +31,7 @@
             margin: 0 auto;
         }
     </style>
+
     <div class="window">
         <div class="title-bar">
             <div class="title-bar-text">Rinkaku Blogging</div>
@@ -39,7 +40,13 @@
                 <button aria-label="Close"></button>
               </div>
         </div>
+
         <div class="window-body" style="justify-content: center; width: 80%; margin: 0 auto;">
+            <nav style="font-size: large; padding-top: 3%;">
+                <a href="index.html">Back to Home</a> |
+                <a href="javascript:history.back()">Back to Blog</a>
+            </nav>
+
             <div id="blog-container">
                 <h2 id="blog-title">Loading...</h2>
                 <p id="blog-author"></p>
