@@ -1,0 +1,75 @@
+<!--Not a single line of JSX to be found here-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rinkaku Works - Portfolio</title>
+    <link rel="icon" type="image" href="https://rinkakuworks.com/public/images/rinkakulogo.png">
+    <link rel="stylesheet" href="./static/98&XP/XP.css">
+    
+    <script src="./static/htmx.min.js"></script>
+    <script src="./static/i18next.min.js"></script>
+    <script src="./static/i18nextHttpBackend.min.js"></script>
+    <script src="./static/i18n.js"></script>
+    <script>
+        document.addEventListener('htmx:afterSwap', function(event) {
+            if (event.detail.target.id === 'content') {
+                updateContent();
+            }
+        })
+    </script>
+</head>
+<body style="padding: 1% 2%;">
+    <style>
+        body {
+            background-image: url("https://www.rinkakuworks.com/public/images/bliss.webp");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        p, div, span {
+            font-size: medium;
+        }
+        a {
+            text-decoration: none;
+            color: #0e0155;
+        }
+    </style>
+    <div class="window">
+        <div class="title-bar">
+            <div class="title-bar-text">Rinkaku Works</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+        </div>
+        <div class="window-body" style="justify-content: center; width: 80%; margin: 0 auto;">
+            <div style="padding-left: 5%; padding-top: 3%;" hx-get="partials/nav.html" hx-trigger="load" hx-target="this"></div>
+
+            <div id="content" style="padding: 4%;">
+
+                    <div style="display: flex; gap: 10px;">
+                        <div style="flex: 1;">
+                            <h2 data-i18n="welcome">Loading...</h2>
+                        </div>
+                    </div>
+                    <div style="align-items: center;">
+                        <div style="flex: 1;">
+                            <h4 data-i18n="welcome2">Loading...</h4>
+                        </div>
+                        <img src="https://rinkakuworks.com/public/images/rinkaku.png" style="width: 15rem; padding: 1rem;" alt="Rin"/><br/>
+                    </div>
+            
+                <div id="work" hx-get="partials/portfolio.html" hx-trigger="load" style="padding-top: 5%;">
+                    <!-- Portfolio content will be loaded here -->
+                </div>
+                
+            </div>
+
+            <div hx-get="partials/footer.html" hx-trigger="load" hx-target="this"></div>
+        </div>
+    </div>
+</body>
+</html>

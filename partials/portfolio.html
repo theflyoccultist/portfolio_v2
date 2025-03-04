@@ -1,0 +1,63 @@
+<style> 
+    .work-card {
+        width: 90%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        margin-bottom: 2rem;
+        border: #3B3B3B solid 2px;
+        padding: 1rem;
+    }
+
+    .thumbnail {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .roles {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+  
+    .work-card:hover {
+        transform: scale(1.05);
+    }
+</style>
+
+<div class="portfolio-page">
+    <div>
+        <div class="work-card">
+            <a href="/partials/_blogplatform.html" hx-get="/partials/_blogplatform.html" hx-trigger="click" hx-target="#content">
+                <img class="thumbnail" src="https://www.rinkakuworks.com/public/images/portfolio-blogging/blogging-platform.webp" alt="Blogging Platform">
+                <h2 data-i18n="appname1">App Name 1</h2>
+                <p class="roles" data-i18n="role1">Role 1</p>
+                <p data-i18n="description1">Description 1</p>
+            </a>
+        </div>  
+        <div class="work-card">
+            <a href="/partials/_simpleplan.html" hx-get="/partials/_simpleplan.html" hx-trigger="click" hx-target="#content">
+                <img class="thumbnail" src="https://rinkakuworks.com/public/images/simpleplan/simpleplan.webp" alt="Simple Plan">
+                <h2 data-i18n="appname2">App Name 2</h2>
+                <p class="roles" data-i18n="role2">Role 2</p>
+                <p data-i18n="description2">Description 2</p>
+            </a>
+        </div>
+        <div class="work-card">
+            <a href="/partials/_evo11.html" hx-get="/partials/_evo11.html" hx-trigger="click" hx-target="#content">
+                <img class="thumbnail" src="https://www.rinkakuworks.com/public/images/evo11/evo11.webp" alt="Evo11">
+                <h2 data-i18n="appname3">App Name 3</h2>
+                <p class="roles" data-i18n="role3">Role 3</p>
+                <p data-i18n="description3">Description 3</p>
+            </a>
+        </div>
+        <div class="work-card">
+            <a href="/partials/_vanityvixen.html" hx-get="/partials/_vanityvixen.html" hx-trigger="click" hx-target="#content">
+                <img class="thumbnail" src="https://rinkakuworks.com/public/images/vanityvixen/vanity-vixen.webp" alt="Vanity Vixen">
+                <h2 data-i18n="appname4">App Name 4</h2>
+                <p class="roles" data-i18n="role4">Role 4</p>
+                <p data-i18n="description4">Description 4</p>
+            </a>
+        </div>
+    </div>
+</div>

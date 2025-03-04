@@ -1,0 +1,121 @@
+<style>
+    .about-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    .mt-5 {
+        margin-top: 3rem;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -0.5rem;
+        margin-left: -0.5rem;
+    }
+
+    .col {
+        flex: 1;
+    }
+
+    .skills-container {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .skills-container ul, li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .skills-container div {
+        flex: 1;
+    }
+
+    @media (max-width: 768px) {
+        .skills-container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .skills-container div {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+</style>
+
+<div>
+    <div class="about-container">
+        <div>
+            <h4 data-i18n="about-intro">Loading...</h5>
+        </div>
+        <div class="row" style="align-items: center;">
+            <div class="col">
+                <img src="https://rinkakuworks.com/public/images/rinkaku.png" alt="My Image" style="width: 15rem;"/>
+            </div>
+            <div class="col">
+                <p><span data-i18n="aboutme">Loading...</span><br/><br/>
+                    <span data-i18n="aboutme2">Loading...</span><br/><br/>
+                    <span data-i18n="aboutme3">Loading...</span><br/><br/>
+                    <span data-i18n="aboutme4">Loading...</span>
+                </p>
+                <br/>
+                <p><strong data-i18n="passion">Loading...</strong><br/><br/>
+                    <span data-i18n="passiontext">Loading...</span><br/><br/>
+                    <span data-i18n="passiontext2">Loading...</span>
+                </p>
+                <br/>
+                <p><strong data-i18n="hobbies">Loading...</strong></p>
+            </div>
+        </div>
+        <div class="row mt-5" style="justify-content: center;">
+            <div class="col" style="text-align: center;">
+                <a href="https://rinkakuworks.com/public/CV_RIN_DELAHAIJE.pdf" data-i18n="buttonViewResume">Loading...</a>
+            </div>
+        </div>
+    </div>
+    
+        <div class="skills-container">
+            <div>
+                <ul>
+                    <h3 data-i18n="tools">Loading...</h3>
+                    <li>Linux</li>
+                    <li>Valgrind</li>
+                    <li>GitHub</li>
+                    <li>Docker</li>
+                    <li>cPanel</li>
+                    <li>Mysql, Postgres</li>
+                </ul>
+            </div>   
+            <div>
+                <ul>
+                    <h3 data-i18n="skillset">Loading...</h3>
+                    <li>C / C++</li>
+                    <li>Go</li>
+                    <li>Rust</li>
+                    <li>Python</li>
+                    <li>Ruby</li>
+                    <li>Bash</li>
+                    <li>SQL</li>
+                    <li>TypeScript</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <h3>Contact</h3>
+                    <li><strong>Portfolio</strong></li>
+                    <li>rinkakuworks.com</li><br/>
+                    <li><strong>Email</strong></li>
+                    <li>rinkakuworks@gmail.com</li><br/>
+                    <li><strong>LinkedIn</strong></li>
+                    <li><a href='https://www.linkedin.com/in/rin-delahaije-9750aa138/'>@rin-delahaije</a></li>
+                </ul>
+            </div>
+        </div>
+</div>
