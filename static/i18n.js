@@ -4,10 +4,10 @@ i18next
         lng: localStorage.getItem("language") || "en", // Default language
         fallbackLng: "en",
         debug: true,
-        ns: ['common', 'projects'],
+        ns: 'common',
         defaultNS: 'common',
         backend: {
-            loadPath: '../locales/{{lng}}/{{ns}}.json',
+            loadPath: '../locales/{{lng}}/common.json',
         }
     }, function(err, t) {
         if (err) {
