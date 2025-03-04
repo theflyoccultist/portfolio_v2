@@ -9,7 +9,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     fetch(`http://localhost:4567/api/blog/${postId}`)
         .then(response => response.json())
-        .then(article => {
+        .then(data => {
+            console.log("API response", data);
+            
+            const article = data.blogpost;
+
             document.getElementById("blog-title").innerText = article.title;
             document.getElementById("blog-author").innerText = "by " + article.author;
             document.getElementById("blog-thumbnail").src = article.thumbnail;
