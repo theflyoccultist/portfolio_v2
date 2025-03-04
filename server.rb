@@ -46,10 +46,13 @@ get '/api/blog' do
     { blogposts: blogposts }.to_json
 end
 
-get '/api/blog/:id' do
+get '/blog/:id' do
     article_id = params[:id]
     blogpost = fetch_api_data("#{API_URL}/api/blog/#{article_id}")
-    { blogpost: blogpost }.to_json
+    
+    @page_title = blogpost["title"]
+
+    erb :blog_article, layout: :layout_blog, locals: { post: blogpost }
 end
 
 set :public_folder, File.dirname(__FILE__)

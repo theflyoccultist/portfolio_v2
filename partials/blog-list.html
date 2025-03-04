@@ -64,7 +64,7 @@
                 const blogCard = document.createElement('div');
                 blogCard.className = 'blog-card';
                 blogCard.innerHTML = `
-                    <a href="article-page.html?id=${post.id}">
+                    <a href="/blog/${post.id}">
                         <img src="${post.thumbnail}" alt="${post.title}" class="card-thumbnail">
                         <h3 class="card-title">${post.title}</h3>
                     </a>
