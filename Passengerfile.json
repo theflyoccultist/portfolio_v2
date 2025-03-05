@@ -1,0 +1,6 @@
+{
+    "startup_file": "server.rb",
+    "app_type": "rack",
+    "log_file": "logs/portfolio.log",
+    "environment": "production"
+}
