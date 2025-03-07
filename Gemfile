@@ -1,5 +1,10 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
-gem 'sinatra'
-gem 'puma'
 gem 'dotenv'
+gem 'puma'
+gem 'sinatra'
+
+
+gem "rackup", "~> 2.2"
