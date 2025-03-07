@@ -19,7 +19,7 @@ jobs:
           credentials_json: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
       
       - name: Set Up Google Cloud SDK
-        run |
+        run: |
           echo "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" > key.json
           gcloud auth activate-service-account --key-file=key.json
           gcloud auth configure-docker europe-west2-docker.pkg.dev
