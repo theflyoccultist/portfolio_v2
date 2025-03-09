@@ -66,4 +66,4 @@ set :views, File.join(settings.public_folder, 'views')
 
 set :environment, :production
 set :port, ENV.fetch('PORT', 8080)
-set :bind, '0.0.0.0'
+set :bind, '127.0.0.1'
