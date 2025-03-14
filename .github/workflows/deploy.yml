@@ -32,5 +32,5 @@ jobs:
           gcloud run deploy portfolio-site \
           --image europe-west2-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/portfolio-repo/portfolio \
           --platform managed \
-          --region europe-west2 \
+          --region europe-west1 \
           --allow-unauthenticated
