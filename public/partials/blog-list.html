@@ -46,7 +46,7 @@
         let currentPage = 1;
 
         function fetchBlogPosts(page) {
-            fetch(`https://portfoliov2-217098702917.europe-west2.run.app/api/blog?page=${page}`)
+            fetch(`https://rinkakuworks.com/api/blog?page=${page}`)
                 .then(response => response.json())
                 .then(data => {
                     console.log('API Response:', data);
