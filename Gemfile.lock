@@ -17,6 +17,9 @@ GEM
     rack-session (2.1.0)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
+    rack-throttle (0.7.1)
+      bundler (>= 1.0.0)
+      rack (>= 1.0.0)
     rackup (2.2.1)
       rack (>= 3)
     ruby2_keywords (0.0.5)
@@ -30,12 +33,12 @@ GEM
     tilt (2.6.0)
 
 PLATFORMS
-  x64-mingw-ucrt
   x86_64-linux
 
 DEPENDENCIES
   dotenv
   puma
+  rack-throttle
   rackup (~> 2.2)
   sinatra
 

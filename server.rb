@@ -4,13 +4,22 @@ require 'sinatra'
 require 'net/http'
 require 'json'
 require 'dotenv/load'
+require 'rack/throttle'
+
+use Rack::Throttle::Hourly, max: 300
 
 configure do
   enable :cross_origin
 end
 
 before do
-  response.headers['Access-Control-Allow-Origin'] = '*'
+  allowed_origins = if settings.environment == :development
+                      ['http://0.0.0.0:8080']
+                    else
+                      ['https://rinkakuworks.com']
+                    end
+
+  response.headers['Access-Control-Allow-Origin'] = allowed_origins.join(', ')
   response.headers['Access-Control-Allow-Methods'] = 'GET, OPTIONS'
   response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
 end

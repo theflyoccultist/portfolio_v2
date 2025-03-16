@@ -28,7 +28,9 @@
     "contact": "Connectons-nous!",
     "contact2": "Vous souhaitez travailler avec moi, ou simplement discuter ? Envoyez-moi un message et explorons les possibilités.",
 
-    
+     "appname0": "Ce Portfolio",
+    "role0": "Développeuse Fullstack",
+    "description0": "Un portfolio pour présenter tous mes projets présents et futurs.",
     "appname1": "Plateforme de Blogging",
     "role1": "Développeuse Fullstack",
     "description1": "Une plateforme de blogging intégré à mon portfolio, qui me permet de partager mes projets et mes expériences.",
@@ -345,5 +347,22 @@
 
         "34": "Conclusion",
         "35": "Au fur et à mesure que mes compétences en développement se perfectionnent, cette plateforme continuera d'évoluer. Elle répondra à mes besoins croissants et représentera une vitrine de mes compétences techniques. J'ai confiance en ce projet, car il n'est pas seulement un exercice de codage, mais une application que j'utilise activement pour documenter mon parcours et enrichir mon portfolio."
+    },
+    "p": {
+        "1": "Site web Portfolio",
+        "2": "Application web Full Stack",
+        "3": "Projet autonome",
+        "4": "Ce portfolio a été conçu pour regrouper et documenter tous mes projets de développement en un seul endroit.",
+
+        "5": "Fonctionnalités",
+        "6": "Mise en page style Windows XP : À l'origine, ce portfolio utilisait des composants Bootstrap classiques, mais faute de personnalisaté, j'ai opté pour un package CSS Windows XP de style rétro.",
+        "7": "Une pile légère : Pour optimiser les temps de déploiement et de chargement, l'ancien portfolio React a été remplacé par un frontend HTMX et un backend Ruby (Sinatra) simple. Fini le lourd dossier node_modules !",
+        "8": "Modèles ERB : Pour garantir un contenu dynamique et réduire la quantité de JavaScript, j'ai opté pour des modèles ERB pour charger le contenu dynamiquement, côté serveur.",
+        "9": "Déploiement robuste : J'ai configuré un conteneur Docker et un pipeline CI/CD. Si je dois mettre à jour ce site web, il me suffit de créer un nouveau push Git depuis l'éditeur de code, et voir le site web se mettre à jour automatiquement.",
+
+        "10": "Défis rencontrés :",
+        "11": "Apprentissage d'un nouveau langage de programmation : J'ai dû apprendre à écrire en Ruby et à utiliser le framework Sinatra, tout en réalisant ce projet. Heureusement, c'était beaucoup plus intuitif que le code spaghetti TypeScript/React que l'ancien portfolio était devenu.",
+        "12": "Apprentissage d'une nouvelle plateforme Cloud : Mon ancien hébergeur était peu pratique d'utilisation et ne correspondait plus à mes aspirations DevOps. C'est pourquoi j'ai appris à utiliser Google Cloud Platform, compatible avec les déploiements de conteneurs Docker et bien plus ouvert aux tâches d'automatisation.",
+        "13": "Réaliser que je n'avais jamais eu besoin de React : en raison de ma réorientation du développement web front-end vers DevOps et l'intégration système, il était nécessaire de se débarrasser de la superfluité pour garantir une maintenance simplifiée."
     }
 }
