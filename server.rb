@@ -6,7 +6,7 @@ require 'json'
 require 'dotenv/load'
 require 'rack/throttle'
 
-use Rack::Throttle::Hourly, max: 300
+use Rack::Throttle::Hourly, max: 500
 
 configure do
   enable :cross_origin
