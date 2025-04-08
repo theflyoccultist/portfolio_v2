@@ -4,8 +4,8 @@ source 'https://rubygems.org'
 
 gem 'dotenv'
 gem 'puma'
-gem 'sinatra'
 gem 'rack-throttle'
+gem 'redcarpet'
+gem 'sinatra'
 
-
-gem "rackup", "~> 2.2"
+gem 'rackup', '~> 2.2'

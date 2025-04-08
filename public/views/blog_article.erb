@@ -1,37 +1,20 @@
 <div id="blog-container">
-    <h2 id="blog-title"><%= post["title"] %></h2>
-    <p id="blog-author">By <%= post["author"] || "Unknown" %></p>
-    <img id="blog-thumbnail" src="<%= post["thumbnail"] %>" alt="<%= post["title"] %>" class="hero-image">
+    <h2 id="blog-title"><%= post[:title] %></h2>
+    <p id="blog-author">By <%= post[:author] || %></p>
+    <img id="blog-thumbnail" src="<%= post[:thumbnail] %>" alt="<%= post[:title] %>" class="hero-image">
 
-    <div id="blog-content" data-markdown="<%= post["content"].gsub('"', '&quot;') %>">
+    <div id="blog-content">
+        <%= post[:content] %>
         <!-- The content will be replaced by the parsed Markdown -->
     </div>
 
-    <p id="blog-date" style="opacity: 0.6;"><%= post["date"] %></p>
+    <p id="blog-date" style="opacity: 0.6;"><%= post[:date] %></p>
 
     <a href="javascript:history.back()">Back to Blog</a>
 </div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const contentDiv = document.getElementById("blog-content");
-        if (!contentDiv) {
-            console.error("Error: blog-content element not found");
-            return;
-        }
-
-        const markdownText = contentDiv.getAttribute("data-markdown");
-        if (!markdownText) {
-            console.error("Error: data-markdown attribute is missing or empty");
-            return;
-        }
-
-        if (typeof marked !== "undefined") {
-            contentDiv.innerHTML = marked.parse(markdownText); // Convert Markdown to HTML
-        } else {
-            console.error("marked.js not loaded");
-        }
-
         // Apply syntax highlighting (if Prism.js is available)
         if (typeof Prism !== "undefined") {
             Prism.highlightAll();

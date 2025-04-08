@@ -5,54 +5,41 @@ require 'net/http'
 require 'json'
 require 'dotenv/load'
 require 'rack/throttle'
+require 'redcarpet'
 
-use Rack::Throttle::Hourly, max: 500
+use Rack::Throttle::Hourly, max: 200
 
-configure do
-  enable :cross_origin
-end
-
-before do
-  allowed_origins = if settings.environment == :development
-                      ['http://0.0.0.0:8080']
-                    else
-                      ['https://rinkakuworks.com']
-                    end
-
-  response.headers['Access-Control-Allow-Origin'] = allowed_origins.join(', ')
-  response.headers['Access-Control-Allow-Methods'] = 'GET, OPTIONS'
-  response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
-end
-
-API_URL = 'https://www.blogging-platform.rinkakuworks.com/backend' || raise('Missing BLOG_API_URL')
-
-# Handle CORS preflight requests
-options '*' do
-  200
-end
+API_URL = ENV['API_URL'] || raise('Missing API_URL')
 
 helpers do
   def fetch_api(url)
     uri = URI(url)
-    response = Net::HTTP.get_response(uri)
+    Net::HTTP.get(uri)
+  end
 
-    case response
-    when Net::HTTPSuccess
-      JSON.parse(response.body)
-    when Net::HTTPNotFound
-      halt 404, { error: 'Not found' }.to_json
-    else
-      halt 500, { error: 'API request failed' }.to_json
-    end
-  rescue JSON::ParserError
-    halt 500, { error: 'Invalid JSON response from API' }.to_json
-  rescue StandardError => e
-    halt 500, { error: "Unexpected error: #{e.message}" }.to_json
+  def project_markdown(file_path)
+    proj_md = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true, fenced_code_blocks: true)
+    proj_content = File.read(file_path)
+    proj_md.render(proj_content)
+  rescue Errno::ENOENT
+    '<p>Project not found.</p>'
   end
 end
 
 get '/' do
-  send_file File.join(settings.public_folder, 'index.html')
+  erb :index
+end
+
+get '/about' do
+  erb :about
+end
+
+get '/contact' do
+  erb :contact
+end
+
+get '/blog' do
+  erb :blog_list
 end
 
 get '/api/blog' do
@@ -63,11 +50,31 @@ end
 
 get '/blog/:id' do
   article_id = params[:id]
-  blogpost = fetch_api("#{API_URL}/api/blog/#{article_id}")
+  post = fetch_api("#{API_URL}/api/blog/#{article_id}")
 
-  @page_title = blogpost['title']
+  @post = {
+    title: post['title'],
+    author: post['author'] || 'Unknown',
+    thumbnail: post['thumbnail'],
+    content: post['content'],
+    date: post['date']
+  }
 
-  erb :blog_article, layout: :layout_blog, locals: { post: blogpost }
+  erb :blog_article
+end
+
+get '/projects/:lang/:project' do
+  @lang = params[:lang]
+  halt 400, 'Invalid Language' unless %w[en fr].include?(@lang)
+
+  file_path = "./public/locales/#{@lang}/#{params[:project]}.md"
+  @project_content = project_markdown(file_path)
+
+  if request.env['HTTP_HX_REQUEST'] == 'true'
+    erb :project, layout: false
+  else
+    erb :project
+  end
 end
 
 set :public_folder, File.join(__dir__, 'public')

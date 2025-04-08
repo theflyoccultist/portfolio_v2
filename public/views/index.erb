@@ -1,0 +1,87 @@
+<div id="content">
+
+  <div style="display: flex; gap: 10px;">
+      <div style="flex: 1;">
+          <h2>Hi there, I am Rin ˚ʚ♡ɞ˚</h2>
+      </div>
+  </div>
+  <div style="align-items: center;">
+      <div style="flex: 1;">
+          <h4>I am a Systems Integration, AI, and Network Engineer in the making. My passion lies in creating robust, efficient, and scalable solutions, whether that's writing low-level systems in C and Rust, or integrating complex network and AI systems.</h4>
+      </div>
+      <img src="https://storage.googleapis.com/theflyoccultist/public/images/rinkaku.png" style="width: 10rem;" alt="Rin"/><br/>
+  </div>
+            
+  <style> 
+      .work-card {
+          width: 90%;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease-in-out;
+          margin-bottom: 2rem;
+          border: #3B3B3B solid 2px;
+          padding: 1rem;
+          cursor: pointer;
+      }
+
+      .thumbnail {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto;
+      }
+
+      .roles {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+      }
+    
+      .work-card:hover {
+          transform: scale(1.05);
+      }
+  </style>
+
+  <div class="portfolio-page">
+      <div>
+          <div class="work-card">
+              <a hx-get="/projects/en/portfolio" hx-target="#content" hx-push-url="true">
+                  <img class="thumbnail" src="https://storage.googleapis.com/theflyoccultist/public/images/portfoliox2/portfolio-image.webp" alt="Portfolio project">
+                  <h2>This Portfolio</h2>
+                  <p class="roles">Fullstack Developer</p>
+                  <p>A portfolio to showcase all of my present and upcoming projects</p>
+              </a>
+          </div>
+          <div class="work-card">
+              <a hx-get="/projects/en/blogging-platform" hx-target="#content" hx-push-url="true">
+                  <img class="thumbnail" src="https://storage.googleapis.com/theflyoccultist/public/images/portfolio-blogging/blogging-platform.webp" alt="Blogging Platform">
+                  <h2>Blogging Platform</h2>
+                  <p class="roles">Fullstack Developer</p>
+                  <p>A blogging platform integrated into my portfolio, allowing me to share my projects and experiences.</p>
+              </a>
+          </div>  
+          <div class="work-card">
+              <a hx-get="/projects/en/simple-plan" hx-target="#content" hx-push-url="true">
+                  <img class="thumbnail" src="https://storage.googleapis.com/theflyoccultist/public/images/simpleplan/simpleplan.webp" alt="Simple Plan">
+                  <h2>Simple Plan</h2>
+                  <p class="roles">UX Designer</p>
+                  <p>Mobile app for concert booking, designed for a local concert venue.</p>
+              </a>
+          </div>
+          <div class="work-card">
+              <a hx-get="/projects/en/evo11" hx-target="#content" hx-push-url="true">
+                  <img class="thumbnail" src="https://storage.googleapis.com/theflyoccultist/public/images/evo11/evo11.webp" alt="Evo11">
+                  <h2>Evo11</h2>
+                  <p class="roles">UX Designer</p>
+                  <p>Mobile app + responsive website for transgender and non-binary affirmation.</p>
+              </a>
+          </div>
+          <div class="work-card">
+              <a hx-get="/projects/en/vanity-vixen" hx-target="#content" hx-push-url="true">
+                  <img class="thumbnail" src="https://storage.googleapis.com/theflyoccultist/public/images/vanityvixen/vanity-vixen.webp" alt="Vanity Vixen">
+                  <h2>Vanity Vixen</h2>
+                  <p class="roles">UX Designer</p>
+                  <p>Responsive website for makeup and hairstyling tutorials.</p>
+              </a>
+          </div>
+      </div>
+  </div>
+</div>

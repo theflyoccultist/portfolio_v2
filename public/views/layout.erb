@@ -9,19 +9,9 @@
     <link rel="stylesheet" href="/static/98&XP/XP.css">
     
     <script src="/static/htmx.min.js"></script>
-    <script src="/static/i18next.min.js"></script>
-    <script src="/static/i18nextHttpBackend.min.js"></script>
-    <script src="/static/i18n.js"></script>
     <script src="/static/clippy.js"></script>
-    <script>
-        document.addEventListener('htmx:afterSwap', function(event) {
-            if (event.detail.target.id === 'content') {
-                updateContent();
-            }
-        })
-    </script>
+
 </head>
-<body style="padding: 1% 2%;">
     <style>
         body {
             background-image: url("https://storage.googleapis.com/theflyoccultist/public/images/bliss.webp");
@@ -62,6 +52,9 @@
             cursor: pointer;
         }
     </style>
+
+<body style="padding: 1% 2%;">
+
     <div class="window">
         <div class="title-bar">
             <div class="title-bar-text">Rinkaku Works</div>
@@ -75,43 +68,22 @@
 
         <!--NavBar-->
         <nav style="font-size: large; padding-top: 1.4em">
-            <img src="https://storage.googleapis.com/theflyoccultist/public/images/rinkaku2.png" width="30" height="30" alt="Rin Logo">
-            <a href="" data-i18n="navBarHome">Loading...</a> |
-            <a href="#" hx-get="/partials/about.html" hx-trigger="click" hx-target="#content" data-i18n="navBarAbout">Loading...</a> |
-            <a href="#" hx-get="/partials/contact.html" hx-trigger="click" hx-target="#content" data-i18n="navBarContact">Loading...</a> |
-            <a href="#" hx-get="/partials/blog-list.html" hx-trigger="click" hx-target="#content">Blog</a>
+            <a href="/">Home</a> |
+            <a href="/about">About</a> |
+            <a href="/contact">Contact</a> |
+            <a href="/blog">Blog</a>
             <br/>    <br/>
-            <button onclick="changeLanguage('en')">🇬🇧 English</button>
-            <button onclick="changeLanguage('fr')">🇫🇷 Français</button>
         </nav>
 
-            <div id="content">
-
-                    <div style="display: flex; gap: 10px;">
-                        <div style="flex: 1;">
-                            <h2 data-i18n="welcome">Loading...</h2>
-                        </div>
-                    </div>
-                    <div style="align-items: center;">
-                        <div style="flex: 1;">
-                            <h4 data-i18n="welcome2">Loading...</h4>
-                        </div>
-                        <img src="https://storage.googleapis.com/theflyoccultist/public/images/rinkaku.png" style="width: 10rem;" alt="Rin"/><br/>
-                    </div>
-            
-                <div id="work" hx-get="partials/portfolio.html" hx-trigger="load" style="padding-top: 5%;">
-                    <!-- Portfolio content will be loaded here -->
-                </div>
-
-            </div>
-            
-            
+        <div id="content">
+          <%= yield %>
         </div>
-            <!-- The All Knowing Beast-->
-            <div class="clippy-container"> 
-              <div id="clippy-bubble">Need Help?</div>
-              <img id="clippy" src="https://storage.googleapis.com/theflyoccultist/clippy_gifs/clippy-white-10.gif">
-            </div>
+
+
+        </div>
+        <!-- The All Knowing Beast-->
+        <%= erb :clippy %>
+
       <!-- Footer -->
       <footer style="text-align: center;">
         <div class="divider">

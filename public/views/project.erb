@@ -1,0 +1,23 @@
+<style>
+  img {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+
+<div class="project-content" id="project-content">
+  <div id="language-switch">
+    <button hx-get="/projects/en/<%= params[:project] %>" hx-target="#project-content" hx-push-url="true">🇬🇧 English</button>
+    <button hx-get="/projects/fr/<%= params[:project] %>" hx-target="#project-content" hx-push-url="true">🇫🇷 Français</button>
+  </div>
+
+  <%= @project_content %>
+</div>
+
+<script>
+    window.scrollTo(0, 0);
+</script>
