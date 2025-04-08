@@ -1,4 +1,4 @@
-# Vanity Vixen
+<h2 style="text-align:center;">Vanity Vixen</h2>
 
 ### Responsive Website for Makeup and Hairstyling Tutorials,
 

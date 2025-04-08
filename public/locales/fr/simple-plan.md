@@ -1,10 +1,10 @@
-# Simple Plan
+<h2 style="text-align:center;">Simple Plan</h2>
 
 ### Application mobile de réservation de concerts pour une salle de concert locale
 
 ### Projet de portfolio de design UX
 
-[Superbe, non ?](https://storage.googleapis.com/theflyoccultist/public/images/simpleplan/simpleplan.webp "Simple Plan")
+![Superbe, non ?](https://storage.googleapis.com/theflyoccultist/public/images/simpleplan/simpleplan.webp "Simple Plan")
 
 **Le projet :** Cette application est une interface destinée à tous les spectateurs fidèles d'une salle de concert locale. Elle vise à accroître leur fidélité en proposant un accès simplifié aux billets, la découverte de nouveaux artistes et un système de notifications.
 

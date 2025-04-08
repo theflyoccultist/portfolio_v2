@@ -67,11 +67,11 @@
         <div class="window-body" style="justify-content: center; width: 80%; margin: 0 auto;">
 
         <!--NavBar-->
-        <nav style="font-size: large; padding-top: 1.4em">
-            <a href="/">Home</a> |
-            <a href="/about">About</a> |
-            <a href="/contact">Contact</a> |
-            <a href="/blog">Blog</a>
+        <nav style="font-size: large; padding-top: 1.4em; cursor: pointer;">
+            <a hx-get="/" hx-target="#content" hx-push-url="true">Home</a> |
+            <a hx-get="/about" hx-target="#content" hx-push-url="true">About</a> |
+            <a hx-get="/contact" hx-target="#content" hx-push-url="true">Contact</a> |
+            <a hx-get="/blog" hx-target="#content" hx-push-url="true">Blog</a>
             <br/>    <br/>
         </nav>
 

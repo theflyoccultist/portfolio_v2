@@ -12,6 +12,14 @@ use Rack::Throttle::Hourly, max: 200
 API_URL = ENV['API_URL'] || raise('Missing API_URL')
 
 helpers do
+  def smart_template(view)
+    if request.env['HTTP_HX_REQUEST'] == 'true'
+      erb view.to_sym, layout: false
+    else
+      erb view.to_sym
+    end
+  end
+
   def fetch_api(url)
     uri = URI(url)
     Net::HTTP.get(uri)
@@ -27,30 +35,30 @@ helpers do
 end
 
 get '/' do
-  erb :index
+  smart_template(:index)
 end
 
 get '/about' do
-  erb :about
+  smart_template(:about)
 end
 
 get '/contact' do
-  erb :contact
+  smart_template(:contact)
 end
 
 get '/blog' do
-  erb :blog_list
+  smart_template(:blog_list)
 end
 
 get '/api/blog' do
   page = params[:page] || 1
-  blogposts = fetch_api("#{API_URL}/api/blog?page=#{page}")
+  blogposts = fetch_api("#{API_URL}/blog?page=#{page}")
   { blogposts: blogposts }.to_json
 end
 
 get '/blog/:id' do
   article_id = params[:id]
-  post = fetch_api("#{API_URL}/api/blog/#{article_id}")
+  post = fetch_api("#{API_URL}/blog/#{article_id}")
 
   @post = {
     title: post['title'],
@@ -70,11 +78,7 @@ get '/projects/:lang/:project' do
   file_path = "./public/locales/#{@lang}/#{params[:project]}.md"
   @project_content = project_markdown(file_path)
 
-  if request.env['HTTP_HX_REQUEST'] == 'true'
-    erb :project, layout: false
-  else
-    erb :project
-  end
+  smart_template(:project)
 end
 
 set :public_folder, File.join(__dir__, 'public')

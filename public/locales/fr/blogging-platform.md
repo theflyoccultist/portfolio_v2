@@ -1,4 +1,4 @@
-# Plateforme de blogging
+<h2 style="text-align:center;">Plateforme de blogging</h2>
 
 ### Application web Full Stack
 

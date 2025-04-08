@@ -1,4 +1,4 @@
-# Simple Plan
+<h2 style="text-align:center;">Simple Plan</h2>
 
 ### Mobile Application for Concert Booking for a Local Concert Hall
 

@@ -1,15 +1,16 @@
-# Use a lightweight Ruby image
-FROM ruby:3.2-buster
+FROM ruby:3.3-alpine
 
-# Set working directory
+RUN bundle config --global frozen 1
+
 WORKDIR /usr/src/app
 
-# Install dependencies first
 COPY Gemfile Gemfile.lock ./
-RUN gem install bundler:2.6 && bundle install
 
-# Copy application code
-COPY . ./
+RUN apk add --no-cache build-base
+
+RUN bundle install
+
+COPY . .
 
 ENV RACK_ENV=production
 ENV PORT=8080

@@ -24,68 +24,15 @@
     }
 </style>
 
-<div class="window-body">
+<div>
+  <!--Blog List Container-->
+  <div id="blog-container">
+    <p>Loading Blog Posts...</p>
+  </div>
 
-    <!--Blog List Container-->
-    <div id="blog-container">
-        <p>Loading Blog Posts...</p>
-    </div>
-
-    <!--Pagination-->
-    <div id="pagination" style="text-align: center;">
-        <button id="prev-button">Previous</button>
-        <button id="next-button">Next</button>
-    </div>
+  <!--Pagination-->
+  <div id="pagination" style="text-align: center;">
+    <button id="prev-button">Previous</button>
+    <button id="next-button">Next</button>
+  </div>
 </div>
-
-<script>
-    (() => {
-        const blogContainer = document.getElementById('blog-container');
-        const prevButton = document.getElementById('prev-button');
-        const nextButton = document.getElementById('next-button');
-        let currentPage = 1;
-
-        function fetchBlogPosts(page) {
-            fetch(`https://rinkakuworks.com/api/blog?page=${page}`)
-                .then(response => response.json())
-                .then(data => {
-                    console.log('API Response:', data);
-                    renderBlogPosts(data.blogposts);
-                })
-                .catch(error => {
-                    console.error('Error fetching blog posts:', error);
-                    blogContainer.innerHTML = '<p>Failed to load blog posts.</p>';
-                });
-        }
-
-        function renderBlogPosts(posts) {
-            blogContainer.innerHTML = '';
-            posts.forEach(post => {
-                const blogCard = document.createElement('div');
-                blogCard.className = 'blog-card';
-                blogCard.innerHTML = `
-                    <a href="/blog/${post.id}">
-                        <img src="${post.thumbnail}" alt="${post.title}" class="card-thumbnail">
-                        <h3 class="card-title">${post.title}</h3>
-                    </a>
-                `;
-                blogContainer.appendChild(blogCard);
-            });
-        }
-
-        prevButton.addEventListener('click', () => {
-            if (currentPage > 1) {
-                currentPage--;
-                fetchBlogPosts(currentPage);
-            }
-        });
-
-        nextButton.addEventListener('click', () => {
-            currentPage++;
-            fetchBlogPosts(currentPage);
-        });
-
-        // Initial fetch
-        fetchBlogPosts(currentPage);
-    })();
-</script>

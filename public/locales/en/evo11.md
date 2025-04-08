@@ -1,4 +1,4 @@
-# Evo11
+<h2 style="text-align:center;">Evo11</h2>
 
 ### Mobile Application + Responsive Website for Transgender and Non-Binary Affirmation
 
