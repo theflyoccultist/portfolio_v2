@@ -3,9 +3,11 @@ FROM ruby:3.3-alpine AS build
 
 RUN apk add --no-cache build-base
 
-WORKDIR /app
+WORKDIR /usr/src/app
+
 COPY Gemfile Gemfile.lock ./
-RUN bundle config --global frozen 1 \
+
+RUN bundle config set --local path 'vendor/bundle' \
   && bundle install
 
 COPY . .
@@ -13,9 +15,12 @@ COPY . .
 # ---- Final Stage ---- 
 FROM ruby:3.3-alpine
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY --from=build /app /app
+COPY --from=build /usr/src/app /usr/src/app
+
+ENV GEM_PATH=/usr/src/app/vendor/bundle/ruby/3.3.0
+ENV PATH=$GEM_PATH/bin:$PATH
 
 RUN apk add --no-cache \
     libstdc++ \
