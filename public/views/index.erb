@@ -39,56 +39,5 @@
       }
   </style>
 
-  <div class="portfolio-page">
-      <div>
-          <div class="work-card">
-              <a hx-get="/projects/en/portfolio" hx-target="#content" hx-push-url="true">
-                  <img class="thumbnail" src="https://storage.googleapis.com/theflyoccultist/public/images/portfoliox2/portfolio-image.webp" alt="Portfolio project">
-                  <h2>This Portfolio</h2>
-                  <p class="roles">Fullstack Developer</p>
-                  <p>A portfolio to showcase all of my present and upcoming projects</p>
-              </a>
-          </div>
-          <div class="work-card">
-              <a hx-get="/projects/en/pwatgres-cli" hx-target="#content" hx-push-url="true">
-                  <img class="thumbnail" src="https://storage.googleapis.com/theflyoccultist/public/images/cli/pwatgres.png" alt="RUBY CLI pwatgres">
-                  <h2>Pwatgres CLI</h2>
-                  <p class="roles">CLI Developer</p>
-                  <p>A magical terminal-based Ruby CLI to automate PostgreSQL user, database, and schema setup with style.</p>
-              </a>
-          </div>
-          <div class="work-card">
-              <a hx-get="/projects/en/blogging-platform" hx-target="#content" hx-push-url="true">
-                  <img class="thumbnail" src="https://storage.googleapis.com/theflyoccultist/public/images/portfolio-blogging/blogging-platform.webp" alt="Blogging Platform">
-                  <h2>Blogging Platform</h2>
-                  <p class="roles">Fullstack Developer</p>
-                  <p>A blogging platform integrated into my portfolio, allowing me to share my projects and experiences.</p>
-              </a>
-          </div>  
-          <div class="work-card">
-              <a hx-get="/projects/en/simple-plan" hx-target="#content" hx-push-url="true">
-                  <img class="thumbnail" src="https://storage.googleapis.com/theflyoccultist/public/images/simpleplan/simpleplan.webp" alt="Simple Plan">
-                  <h2>Simple Plan</h2>
-                  <p class="roles">UX Designer</p>
-                  <p>Mobile app for concert booking, designed for a local concert venue.</p>
-              </a>
-          </div>
-          <div class="work-card">
-              <a hx-get="/projects/en/evo11" hx-target="#content" hx-push-url="true">
-                  <img class="thumbnail" src="https://storage.googleapis.com/theflyoccultist/public/images/evo11/evo11.webp" alt="Evo11">
-                  <h2>Evo11</h2>
-                  <p class="roles">UX Designer</p>
-                  <p>Mobile app + responsive website for transgender and non-binary affirmation.</p>
-              </a>
-          </div>
-          <div class="work-card">
-              <a hx-get="/projects/en/vanity-vixen" hx-target="#content" hx-push-url="true">
-                  <img class="thumbnail" src="https://storage.googleapis.com/theflyoccultist/public/images/vanityvixen/vanity-vixen.webp" alt="Vanity Vixen">
-                  <h2>Vanity Vixen</h2>
-                  <p class="roles">UX Designer</p>
-                  <p>Responsive website for makeup and hairstyling tutorials.</p>
-              </a>
-          </div>
-      </div>
-  </div>
+  <%= erb :work_card %>
 </div>

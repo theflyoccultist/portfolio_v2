@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 require 'sinatra'
-require 'net/http'
-require 'json'
 require 'dotenv/load'
+require 'json'
+require 'net/http'
 require 'rack/throttle'
 require 'redcarpet'
+require 'uri'
 
 use Rack::Throttle::Hourly, max: 200
 
@@ -22,7 +23,7 @@ helpers do
 
   def fetch_api(url)
     uri = URI(url)
-    Net::HTTP.get(uri)
+    JSON.parse(Net::HTTP.get(uri))
   end
 
   def project_markdown(file_path)
@@ -51,9 +52,8 @@ get '/blog' do
 end
 
 get '/api/blog' do
-  page = params[:page] || 1
-  blogposts = fetch_api("#{API_URL}/blog?page=#{page}")
-  { blogposts: blogposts }.to_json
+  @articles = fetch_api(API_URL)
+  erb :articles, layout: false
 end
 
 get '/blog/:id' do
@@ -63,7 +63,7 @@ get '/blog/:id' do
   @post = {
     title: post['title'],
     author: post['author'] || 'Unknown',
-    thumbnail: post['thumbnail'],
+    thumbnail: post['thumbnail'] || 'No thumbnail',
     content: post['content'],
     date: post['date']
   }

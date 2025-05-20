@@ -4,9 +4,9 @@
 
 ### Autonomous Project
 
-![This will be replaced soon](https://storage.googleapis.com/theflyoccultist/public/images/portfolio-blogging/blogging-platform.webp "Blogging Platform")
+![This has been replaced](https://storage.googleapis.com/theflyoccultist/public/images/portfolio-blogging/blogging-platform.png "Blogging Platform")
 
-#### This blogging platform was designed to document my coding journey, share my learnings and successes, and enhance my experience in web development and deployment.,
+#### This blogging platform was designed to document my coding journey, share my learnings and successes, and enhance my experience in web development and cloud deployment.
         
 **Features**
 
@@ -18,7 +18,9 @@
 
 **Responsive Design:** The platform automatically adapts to provide an optimal experience, whether on mobile or desktop.
 
-**Robust Deployment:** This was also deployed on Google Cloud, same as the portfolio, but I also needed to learn how to deploy and configure a PostgreSQL instance.
+**Rate Limiting:** Both the API and the platform are rate limited, keeping down costs.
+
+**Robust Deployment:** This was also deployed on Google Cloud, same as the portfolio, but I also needed to learn how to deploy and configure a database. This platform being for solo use, I decided that an SQLite instance was sufficient.
 
 **Public/Private Display:** A feature to save a draft and publish it later.
 
@@ -27,8 +29,6 @@
 **Challenges Faced**
 
 **Rewriting the entire platform in HTMX and Ruby:** Previously also a React project, I wanted this project to have a Windows 98 style layout, like browsing the internet in a sketchy 90s internet café. That had to be done, if this was a project that I wanted to be proud of.
-
-**CORS Policies:** I implemented a strict CORS policy in the backend to secure API calls from the frontend. I also configured exceptions to only allow GET requests from my portfolio.,
 
 ---
 
@@ -42,27 +42,34 @@ A diagram illustrating the relationship between the different components of the 
 
 **Deployment Process**
 
-- Creating a frontend project with HTMX and CSS.
 - Setting up a backend with Ruby's Sinatra framework to serve files.
-- Setting up ERB templates for the dynamic server-side rendering.
-- Configuring a PostgreSQL to make posts persistent.
+- Setting up ERB templates with HTMX for server-side rendering.
+- Configuring an SQLite database to make posts persistent.
 - Configuring a CI/CD pipeline for quick updates through GitHub Actions and Google Cloud Services.
 
 ---
 
 **Screenshots**
 
-![Replace this image soon](https://storage.googleapis.com/theflyoccultist/public/images/portfolio-blogging/screenshot1.webp "Platform HTML page")
+![Has been replaced](https://storage.googleapis.com/theflyoccultist/public/images/portfolio-blogging/article.png "Post Edit Page")
 
-![Also replace this image soon](https://storage.googleapis.com/theflyoccultist/public/images/portfolio-blogging/screenshot2.webp "Post Edit Page")
+--- 
 
----
+**Backend Controller for Creating a New Post**
 
-**Code Examples**
+```ruby
+  post '/api' do
+    is_public = params[:is_public] == 'true' ? 1 : 0
 
-Text Editor Customization
+    db.execute(
+      "INSERT INTO posts (title, thumbnail, content, author, is_public)
+      VALUES (?, ?, ?, ?, ?)",
+      [params[:title], params[:thumbnail], params[:content], params[:author], is_public]
+    )
 
-Backend Controller for Creating a New Post
+    hx_redirect
+  end
+```
 
 ---
 

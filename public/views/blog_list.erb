@@ -1,5 +1,5 @@
 <style> 
-    .blog-card {
+    .article {
         width: 90%;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease-in-out;
@@ -7,29 +7,39 @@
         border: #3B3B3B solid 2px;
         padding: 1rem;
     }
-
-    .card-thumbnail {
+    .article-thumbnail {
         max-width: 100%;
         height: auto;
         display: block;
         margin: 0 auto;
     }
-
     h3 {
         margin: 1.5rem;
     }
-  
-    .blog-card:hover {
+    .article:hover {
         transform: scale(1.05);
+    }
+    .htmx-indicator {
+      opacity: 0;
+    }
+    .htmx-request .htmx-indicator {
+      opacity: 1;
     }
 </style>
 
 <div>
-  <!--Blog List Container-->
-  <div id="blog-container">
-    <p>Loading Blog Posts...</p>
-  </div>
 
+<div
+    hx-get="api/blog"
+    hx-trigger="load"
+    hx-target="#posts"
+    hx-indicator="#loading">
+ 
+  <div id="loading" class="htmx-indicator">Loading Blog Posts...</div>
+  <div id="posts">
+    <!-- rendered HTML --> 
+  </div>
+</div>
   <!--Pagination-->
   <div id="pagination" style="text-align: center;">
     <button id="prev-button">Previous</button>

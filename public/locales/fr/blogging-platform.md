@@ -4,7 +4,7 @@
 
 ### Projet autonome
 
-![Ceci sera bientôt remplacé](https://storage.googleapis.com/theflyoccultist/public/images/portfolio-blogging/blogging-platform.webp "Plateforme de blogging")
+![This has been replaced](https://storage.googleapis.com/theflyoccultist/public/images/portfolio-blogging/blogging-platform.png "Blogging Platform")
 
 #### Cette plateforme de blogging a été conçue pour documenter mon parcours de codeur, partager mes apprentissages et mes réussites, et enrichir mon expérience en développement et déploiement web.
 
@@ -28,8 +28,6 @@
 
 **Réécriture complète de la plateforme en HTML et Ruby** : Ce projet, qui était auparavant un projet React, souhaitait une interface de type Windows 98, comme une navigation dans un cybercafé louche des années 90. C'était indispensable si je voulais être fier de ce projet.
 
-**Politiques CORS** : J'ai implémenté une politique CORS stricte en backend pour sécuriser les appels d'API depuis le frontend. J'ai également configuré des exceptions pour n'autoriser que les requêtes GET provenant de mon portfolio.
-
 ---
 
 **Diagramme d'architecture**
@@ -42,8 +40,8 @@ Un diagramme illustrant la relation entre les différents composants de la plate
 
 **Processus de déploiement**
 
-- Création d'un projet frontend avec HTML et CSS.
-- Configuration d'un backend avec le framework Sinatra de Ruby pour le service de fichiers.
+- Création d'une interface utilisateur avec HTMX et CSS.
+- Configuration d'un backend avec Ruby, Sinatra et Rack.
 - Configuration de modèles ERB pour le rendu dynamique côté serveur.
 - Configuration d'une base de données PostgreSQL pour la persistance des publications.
 - Configuration d'un pipeline CI/CD pour des mises à jour rapides via GitHub Actions et Google Cloud Services.
@@ -52,17 +50,25 @@ Un diagramme illustrant la relation entre les différents composants de la plate
 
 **Captures d'écran**
 
-![Remplacer cette image prochainement](https://storage.googleapis.com/theflyoccultist/public/images/portfolio-blogging/screenshot1.webp "Page HTML de la plateforme")
-
-![Remplacer également cette image prochainement](https://storage.googleapis.com/theflyoccultist/public/images/portfolio-blogging/screenshot2.webp "Page de modification des articles")
+![Has been replaced](https://storage.googleapis.com/theflyoccultist/public/images/portfolio-blogging/article.png "Post Edit Page")
 
 ---
 
-**Exemples de code**
+**Contrôleur backend pour la création d'un article**
 
-Personnalisation de l'éditeur de texte
+```ruby
+  post '/api' do
+    is_public = params[:is_public] == 'true' ? 1 : 0
 
-Contrôleur backend pour la création d'un article
+    db.execute(
+      "INSERT INTO posts (title, thumbnail, content, author, is_public)
+      VALUES (?, ?, ?, ?, ?)",
+      [params[:title], params[:thumbnail], params[:content], params[:author], is_public]
+    )
+
+    hx_redirect
+  end
+```
 
 ---
 
