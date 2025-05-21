@@ -1,0 +1,13 @@
+<div>
+
+  <p>Hello!</p>
+
+  <div 
+    id="blog-container"
+    hx-get="/api/blog/<%= @blog_id %>"
+    hx-trigger="load"
+    hx-swap="innerHTML">
+    Loading article...
+    <!-- render article here -->
+  </div>
+</div>

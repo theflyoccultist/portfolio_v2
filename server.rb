@@ -47,28 +47,24 @@ get '/contact' do
   smart_template(:contact)
 end
 
-get '/blog' do
-  smart_template(:blog_list)
+get '/api/blog/:id' do
+  article = fetch_api(API_URL).find { |a| a['id'].to_s == params[:id] }
+  @article = article
+  smart_template(:article)
+end
+
+get '/blog/:id' do
+  @blog_id = params[:id]
+  smart_template(:article_tmpl)
 end
 
 get '/api/blog' do
   @articles = fetch_api(API_URL)
-  erb :articles, layout: false
+  smart_template(:articles)
 end
 
-get '/blog/:id' do
-  article_id = params[:id]
-  post = fetch_api("#{API_URL}/blog/#{article_id}")
-
-  @post = {
-    title: post['title'],
-    author: post['author'] || 'Unknown',
-    thumbnail: post['thumbnail'] || 'No thumbnail',
-    content: post['content'],
-    date: post['date']
-  }
-
-  erb :blog_article
+get '/blog' do
+  smart_template(:articles_list)
 end
 
 get '/projects/:lang/:project' do

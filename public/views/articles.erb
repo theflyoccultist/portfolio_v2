@@ -1,8 +1,16 @@
 <% @articles.each do |article| %>
-  <div class="article">
-    <h3><%= article["title"] %></h3>
-    <img src="<%= article["thumbnail"] %>" 
-         alt="article thumbnail"
-         class="article-thumbnail">
-  </div>
+  <% if article['is_public'] == 1 %>
+    <a hx-get="/blog/<%= article['id'] %>"
+       hx-target="#content"
+       hx-push-url="true">
+
+      <div class="article">
+        <h3><%= article['title'] %></h3>
+        <img src="<%= article['thumbnail'] %>" 
+            alt="article thumbnail"
+            class="article-thumbnail">
+        <p>By <%= article['author'] || 'Unknown' %></p>
+      </div>
+    </a>
+  <% end %>
 <% end %>
