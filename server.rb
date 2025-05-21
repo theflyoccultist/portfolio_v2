@@ -27,7 +27,7 @@ helpers do
   end
 
   def project_markdown(file_path)
-    proj_md = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true, fenced_code_blocks: true)
+    proj_md = Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true)
     proj_content = File.read(file_path)
     proj_md.render(proj_content)
   rescue Errno::ENOENT
@@ -50,7 +50,9 @@ end
 get '/api/blog/:id' do
   article = fetch_api(API_URL).find { |a| a['id'].to_s == params[:id] }
   @article = article
-  smart_template(:article)
+
+  markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true)
+  markdown.render(@article['content'] || '')
 end
 
 get '/blog/:id' do
